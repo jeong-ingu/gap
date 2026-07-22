@@ -301,13 +301,17 @@
     document.addEventListener('click', e=>{ const cx=e.target.closest('.cxlink'); if(cx) openInfo(cx.dataset.cid); });
 
     // 실거래 갭 추이 차트 (갭 값 클릭)
+    // 월별 평균 갭: 그 달 매매 평균 − 전세 평균 (없는 달은 직전 값 이월)
     function gapSeries(saleTx, leaseTx){
-      const dates=[...new Set([...saleTx,...leaseTx].map(x=>x.date))].sort();
-      const pts=[];
-      for(const d of dates){
-        let s=null; for(const x of saleTx){ if(x.date<=d) s=x.price; }
-        let l=null; for(const x of leaseTx){ if(x.date<=d) l=x.price; }
-        if(s!=null && l!=null) pts.push({date:d, gap:s-l});
+      const avgByMonth=(tx)=>{ const m={}; for(const x of tx){ const k=x.date.slice(0,7); (m[k]=m[k]||[]).push(x.price); }
+        const o={}; for(const k in m) o[k]=m[k].reduce((a,b)=>a+b,0)/m[k].length; return o; };
+      const sA=avgByMonth(saleTx), lA=avgByMonth(leaseTx);
+      const months=[...new Set([...Object.keys(sA),...Object.keys(lA)])].sort();
+      let lastS=null,lastL=null; const pts=[];
+      for(const mo of months){
+        if(sA[mo]!=null) lastS=sA[mo];
+        if(lA[mo]!=null) lastL=lA[mo];
+        if(lastS!=null && lastL!=null) pts.push({ date:mo+'-01', gap:Math.round(lastS-lastL) });
       }
       return pts;
     }
@@ -334,7 +338,7 @@
       } else {
         const last=pts[pts.length-1].gap;
         $('#mb').innerHTML = `<div class="chartwrap">${chartSVG(pts)}</div>`
-          + `<div class="cnote">최근 실거래 갭 <b style="color:var(--gold)">${eok(last)}</b> · 각 시점 = (직전 매매 실거래 − 직전 전세 실거래)</div>`;
+          + `<div class="cnote">최근 실거래 갭 <b style="color:var(--gold)">${eok(last)}</b> · 월별 평균(그 달 매매 평균 − 전세 평균)</div>`;
       }
       backdrop.classList.add('show');
     }
