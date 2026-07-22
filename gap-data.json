@@ -756,67 +756,6 @@
         ]
       },
       {
-        "complexId": "162339",
-        "complexName": "e편한세상검단웰카운티",
-        "info": {
-          "approvalDate": "202607",
-          "approvalYear": "2026",
-          "elapsedYear": 1,
-          "households": 1458,
-          "buildings": 14,
-          "address": "인천시 검단구 인천시 검단구 원당동 이음1로 396",
-          "station": {
-            "name": "아라역",
-            "line": "인천1",
-            "walkMin": 8,
-            "walkDist": 494
-          }
-        },
-        "url": "https://fin.land.naver.com/map?center=3z6F25-2ANipU&zoom=16.129359985966207&layer=NobwRAlgJmBcYGMD2BbADgGwKYA8D6UWALgIYQZgA0YaJATiSgM5zjLrY4CSM8AjADYATAGYRATjABfakyz0EACwAK9Ri1jhSAIzhgiDAHZMSCIhCSGqYeuYTYAKg0IOAnmiwawAQT4BaACE%2BawMSY1NzS2VXLEsAczcPADkAVxRtLDo9AFYQoxMzC0MnEhd3LD1faWo6YhS6QxJtbDgDFKwpAF0gA",
-        "rows": [
-          {
-            "complexId": "162339",
-            "complexName": "e편한세상검단웰카운티",
-            "bucket": 59,
-            "pyeongLabel": "25평",
-            "exclusive": 59.9,
-            "saleMin": null,
-            "saleMax": null,
-            "saleMed": null,
-            "saleCnt": 0,
-            "leaseMin": 320000000,
-            "leaseMax": 370000000,
-            "leaseMed": 340000000,
-            "leaseCnt": 33,
-            "realSale": null,
-            "realLease": null,
-            "listingGap": null,
-            "realGap": null,
-            "diff": null
-          },
-          {
-            "complexId": "162339",
-            "complexName": "e편한세상검단웰카운티",
-            "bucket": 84,
-            "pyeongLabel": "34평",
-            "exclusive": 84.8,
-            "saleMin": null,
-            "saleMax": null,
-            "saleMed": null,
-            "saleCnt": 0,
-            "leaseMin": 400000000,
-            "leaseMax": 490000000,
-            "leaseMed": 450000000,
-            "leaseCnt": 77,
-            "realSale": null,
-            "realLease": null,
-            "listingGap": null,
-            "realGap": null,
-            "diff": null
-          }
-        ]
-      },
-      {
         "complexId": "167537",
         "complexName": "검단신도시롯데캐슬넥스티엘",
         "info": {
