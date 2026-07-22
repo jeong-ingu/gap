@@ -45,10 +45,12 @@
   td.muted{color:var(--muted);font-style:italic}
   .cxsub{font-size:10.5px;color:var(--muted);font-weight:400;margin-top:3px}
   .bdgs{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px}
-  .bdg{font-size:10px;font-weight:600;padding:2px 8px;border-radius:5px;line-height:1.5;white-space:nowrap;
-    background:rgba(255,255,255,.07);color:#cfc9b6;border:1px solid rgba(255,255,255,.06)}
-  /* 잔잔한 회색 pill — 종류별 색 구분 없음 */
-  .b-tt,.b-big,.b-sch,.b-new,.b-brand{}
+  .bdg{font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;line-height:1.5;white-space:nowrap;border:1px solid transparent}
+  .b-tt{color:#7fb3ff;background:rgba(90,140,255,.15);border-color:rgba(90,140,255,.32)}    /* 초역세 파랑 */
+  .b-big{color:#79d68a;background:rgba(70,190,110,.15);border-color:rgba(70,190,110,.32)}   /* 대단지 초록 */
+  .b-sch{color:#5fd6c4;background:rgba(60,200,180,.15);border-color:rgba(60,200,180,.32)}   /* 초품아 청록 */
+  .b-new{color:#f0c15a;background:rgba(230,180,60,.15);border-color:rgba(230,180,60,.34)}   /* 신축 골드 */
+  .b-brand{color:#cf9bf0;background:rgba(190,120,240,.15);border-color:rgba(190,120,240,.32)} /* 브랜드 보라 */
   .diff{font-weight:800;padding:2px 9px;border-radius:999px;display:inline-block;min-width:52px;text-align:center}
   .d0{color:var(--d0);background:var(--d0bg)} .d1{color:var(--d1);background:var(--d1bg)}
   .d2{color:var(--d2);background:var(--d2bg)} .d3{color:var(--d3);background:var(--d3bg)}
@@ -137,8 +139,8 @@
       const b = [];
       if(i.station && i.station.walkDist!=null && i.station.walkDist<=300) b.push(['초역세','b-tt']);
       if(i.households!=null && i.households>=1000) b.push(['대단지','b-big']);
-      if(i.school && i.school.distance!=null && i.school.distance<=300) b.push(['초품아','b-sch']);
-      if(i.elapsedYear!=null && i.elapsedYear<=5) b.push(['신축','b-new']);
+      if(i.school && i.school.distance!=null && i.school.distance<=500) b.push(['초품아','b-sch']);
+      if(i.elapsedYear!=null && i.elapsedYear<=7) b.push(['신축','b-new']);
       if(BRANDS.some(x=> (name||'').includes(x))) b.push(['브랜드','b-brand']);
       return b.length ? `<div class="bdgs">${b.map(([t,c])=>`<span class="bdg ${c}">${t}</span>`).join('')}</div>` : '';
     };
@@ -166,7 +168,7 @@
     };
     const sdiff = (r)=> (r.listingGap!=null && r.realGap!=null) ? r.listingGap - r.realGap : null;
     // 단지 셀 / 나머지 데이터 셀(평형~차이, 8칸)
-    const complexTd = (r)=> `<td class="cx cxlink" data-cid="${esc(r.complexId)}" title="${esc(r.complexName)} (클릭: 단지정보)">${esc(r.complexName)}${badges(r.complexId,r.complexName)}</td>`;
+    const complexTd = (r)=> `<td class="cx cxlink" data-cid="${esc(r.complexId)}" title="${esc(r.complexName)} (클릭: 단지정보)">${esc(r.complexName)}</td>`;
     const restCells = (r)=> `
         <td class="l"><span class="area">${esc(r.pyeongLabel)}</span> <span class="py">전용${r.exclusive}㎡</span></td>
         <td>${priceStack('sale', r.saleMed, r.saleMin, r.saleMax, r.saleCnt)}</td>
