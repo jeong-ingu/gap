@@ -110,7 +110,7 @@
     <span><span class="dot" style="background:#89b4ff"></span>음수 ▼ (매물갭 &lt; 실거래갭)</span>
     <span>· TOP=차이 큰음수→큰양수 순 · 동네별=단지로 묶음(캐럿으로 접기)</span>
     <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 6개월)</span>
-    <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-tt2">역세권</span>300~600m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤500m &nbsp;<span class="bdg b-new">신축</span>준공≤7년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·위브</span>
+    <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-tt2">역세권</span>300~600m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤500m &nbsp;<span class="bdg b-new">신축</span>준공≤7년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·더샵</span>
   </div>
 </div>
 
@@ -137,7 +137,7 @@
       for(const c of complexes) INFO[c.complexId] = { name:c.complexName, info:c.info||{}, url:c.url };
 
     // 단지 배지: 초역세(도보≤300m) · 대단지(≥1000세대) · 초품아(초교≤300m) · 신축(≤5년) · 브랜드
-    const BRANDS = ['자이','롯데캐슬','푸르지오','래미안','힐스테이트','편한세상','아이파크','위브'];
+    const BRANDS = ['자이','롯데캐슬','푸르지오','래미안','힐스테이트','편한세상','아이파크','더샵'];
     const badges = (cid, name)=>{
       const i = INFO[cid]?.info || {};
       const b = [];
