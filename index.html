@@ -79,7 +79,7 @@
     <button class="fbtn" data-area="84">84㎡</button>
   </div>
 
-  <h2>🎯 갭 근접 TOP <span class="pill">음수(매물갭&lt;실거래갭) 먼저 · 상위 10건</span></h2>
+  <h2>🎯 갭 근접 TOP <span class="pill">차이 큰 음수 → 큰 양수 순 · 10건</span></h2>
   <div class="card tablewrap" style="margin-bottom:8px"><table id="topN"></table></div>
 
   <div id="groups"></div>
@@ -183,11 +183,8 @@
       applyFilter(currentArea);
     }
 
-    // TOP: 음수(매물갭<실거래갭) 먼저, 그 안에서 0에 가까운 순 · 상위 10건 (고정, 정렬 헤더 없음)
-    const topSorted = topRows.slice().sort((a,b)=>{
-      const sa=sdiff(a), sb=sdiff(b), na=sa<0?0:1, nb=sb<0?0:1;
-      return na!==nb ? na-nb : Math.abs(sa)-Math.abs(sb);
-    }).slice(0,10);
+    // TOP: 부호 있는 차이(매물갭−실거래갭) 오름차순 = 큰 음수 → 큰 양수 · 상위 10건 (고정)
+    const topSorted = topRows.slice().sort((a,b)=> sdiff(a) - sdiff(b)).slice(0,10);
     $('#topN').innerHTML = head(true,null,null,false) + '<tbody>' + topSorted.map(r=>
       `<tr data-area="${r.bucket}" class="${r.diff==null?'nodata':''}">${cells(r,true)}</tr>`).join('') + '</tbody>';
 
