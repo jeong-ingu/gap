@@ -392,12 +392,14 @@
     const rr = groupData.flatMap(g=>g.rows).find(r=>r.complexId==='124846' && r.bucket===75);
     if(rr){
       const url = INFO['124846']?.url || '#';
-      const rate = (rr.saleMed&&rr.leaseMed)?Math.round(rr.leaseMed/rr.saleMed*100)+'%':'-';
+      const cc = COST['124846|75']?.costs;
+      const invest = (rr.listingGap||0) + (cc?.acquisitionTax||0) + (cc?.agentFee||0);
       $('#reco').innerHTML = `<div class="reco">
         <div class="rtag">⭐ 추천 매물!</div>
         <div class="rtitle"><a href="${esc(url)}" target="_blank" rel="noopener">검단금호어울림센트럴(AB14BL) · 30평 <span>전용 ${rr.exclusive}㎡ · 아라역</span></a></div>
-        <div class="rfig"><b>매물 갭 ${eok(rr.listingGap)}</b> · 전세가율 ${rate} · 실거래갭 ${eok(rr.realGap)} · 매매 ${eok(rr.saleMin)}~${eok(rr.saleMax)}</div>
-        <div class="rreason"><b>단 3억대의 저렴한 갭</b>으로 진입 부담이 적고, <b>아라역 대장 단지</b>로 지역 내 시세를 리드합니다. 여기에 <b>5호선 연장 호재</b>까지 더해져 개통 기대감에 따른 향후 상승 여력이 큰, 갭투자 최적의 매물입니다. 🚀</div>
+        ${badges('124846','검단금호어울림센트럴(AB14BL)')}
+        <div class="rfig" style="font-size:15px"><b>매물 갭 ${eok(rr.listingGap)} · 실투자금 약 ${eok(invest)}</b></div>
+        <div class="rreason">단 <b>3억대의 저렴한 갭</b>으로 진입 부담이 적고, <b>아라역 대장 단지</b>로 지역 내 시세를 리드합니다.<br>여기에 <b>5호선 연장 호재</b>까지 더해져 개통 기대감에 따른 향후 상승 여력이 큰, 갭투자 최적의 매물입니다. 🚀</div>
       </div>`;
     }
   }
