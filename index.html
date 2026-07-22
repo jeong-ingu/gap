@@ -127,7 +127,7 @@
 
   if(!G){ document.body.innerHTML='<div class="wrap"><h1>데이터 없음</h1><p class="sub">먼저 <code>node gap-scrape.mjs</code> 실행</p></div>'; }
   else {
-    $('#sub').textContent = `수집: ${new Date(G.updatedAt).toLocaleString('ko-KR')} · 실거래 최근 3개월(${G.dateRange.startDate}~${G.dateRange.endDate}) · 전용 59·75·84㎡`;
+    $('#sub').innerHTML = `갭투자를 위한 시세 비교 대시보드입니다. 최근 3개월 실거래의 갭 가격과 현재 등록된 거래 가능 매물의 갭 가격을 비교합니다. 성공적인 갭 투자 되세요. 🍀`;
 
     // 단지 정보 룩업 (모달용)
     const INFO = {};
