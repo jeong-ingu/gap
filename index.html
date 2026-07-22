@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>단지 갭 비교 (매물갭 vs 실거래갭)</title>
+<style>
+  :root{
+    --bg:#17160f; --card:#211f16; --card2:#1b1a12; --line:#34311f; --text:#ece7d6; --muted:#a49c82;
+    --gold:#d9b24a; --gold-dim:#8f7d3f;
+    --sale:#e0b552; --lease:#9fb3c4;
+    /* 차이 배지: 작을수록 골드, 클수록 흐리게 (부드럽게) */
+    --d0:#f0cf6a; --d0bg:#3a3112; --d1:#c9b674; --d1bg:#2c2814; --d2:#9a9270; --d2bg:#242113; --d3:#7c776a; --d3bg:#201e16;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:21px;margin:0 0 4px;color:var(--gold)}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:18px}
+  h2{font-size:16px;margin:28px 0 10px;display:flex;align-items:center;gap:8px;color:var(--text)}
+  .pill{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 9px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;white-space:nowrap}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+  th{font-size:11px;color:var(--gold-dim);font-weight:700;position:sticky;top:0;background:var(--card2);text-align:right}
+  th.sortable{cursor:pointer;user-select:none}
+  th.sortable:hover{color:var(--gold)}
+  .mt a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+  th.l,td.l{text-align:left}
+  td.cx{text-align:left;font-weight:600;max-width:180px;overflow:hidden;text-overflow:ellipsis}
+  tbody tr:hover td{background:rgba(217,178,74,.05)}
+  .grp{color:var(--muted);font-size:11px}
+  .py{color:var(--muted);font-size:11px}
+  .area{font-weight:700;color:var(--text)}
+  .sale{color:var(--sale);font-weight:700}
+  .lease{color:var(--lease);font-weight:700}
+  .rng{color:var(--muted);font-size:10.5px}
+  .gap{font-weight:700;color:var(--text)}
+  .none{color:var(--muted);font-size:11px;font-style:italic}
+  .diff{font-weight:800;padding:2px 9px;border-radius:999px;display:inline-block;min-width:52px;text-align:center}
+  .d0{color:var(--d0);background:var(--d0bg)} .d1{color:var(--d1);background:var(--d1bg)}
+  .d2{color:var(--d2);background:var(--d2bg)} .d3{color:var(--d3);background:var(--d3bg)}
+  tr.nodata td{opacity:.5}
+  .date{color:var(--muted);font-size:10px}
+  .filters{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+  .fbtn{font:inherit;font-size:13px;cursor:pointer;padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+  .fbtn:hover{border-color:var(--gold-dim)}
+  .fbtn.active{background:var(--gold);border-color:var(--gold);color:#17160f;font-weight:700}
+  .legend{font-size:11px;color:var(--muted);margin:8px 2px 0;display:flex;gap:14px;flex-wrap:wrap}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
+  .cxlink{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+  .cxlink:hover{color:var(--gold)}
+  .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+  .backdrop.show{display:flex}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:14px;max-width:410px;width:100%;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .modal .mh{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:8px}
+  .modal .mt{font-weight:800;font-size:16px;color:var(--gold);line-height:1.35}
+  .modal .mx{margin-left:auto;cursor:pointer;border:none;background:none;font-size:22px;color:var(--muted);line-height:1}
+  .modal .mb{padding:4px 18px 14px}
+  .minfo{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .minfo:last-child{border-bottom:none}
+  .minfo .k{color:var(--muted)} .minfo .v{font-weight:700;text-align:right}
+  .maddr{padding-top:10px;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>단지 갭 비교 · 매물갭 vs 실거래갭</h1>
+  <div class="sub" id="sub"></div>
+
+  <div class="filters" id="filters">
+    <button class="fbtn active" data-area="all">전체</button>
+    <button class="fbtn" data-area="59">59㎡</button>
+    <button class="fbtn" data-area="75">75㎡</button>
+    <button class="fbtn" data-area="84">84㎡</button>
+  </div>
+
+  <h2>🎯 갭 근접 TOP <span class="pill">매물갭과 실거래갭 차이가 작은 순</span></h2>
+  <div class="card tablewrap" style="margin-bottom:8px"><table id="topN"></table></div>
+
+  <div id="groups"></div>
+
+  <div class="backdrop" id="backdrop">
+    <div class="modal"><div class="mh"><div class="mt" id="mt"></div><button class="mx" id="mx" aria-label="닫기">×</button></div>
+    <div class="mb" id="mb"></div></div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot" style="background:var(--d0)"></span>차이 ≤ 0.3억</span>
+    <span><span class="dot" style="background:var(--d1)"></span>≤ 0.6억</span>
+    <span><span class="dot" style="background:var(--d2)"></span>≤ 1.2억</span>
+    <span><span class="dot" style="background:var(--d3)"></span>그 이상 / 실거래 없음</span>
+    <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 3개월)</span>
+  </div>
+</div>
+
+<script src="gap-data.js"></script>
+<script>
+  const G = window.GAP;
+  const $ = (s)=>document.querySelector(s);
+  const eok = (n)=>{ if(n==null) return '-'; let s=(n/1e8).toFixed(2).replace(/\.?0+$/,''); return (s||'0')+'억'; };
+  const esc = (s)=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const diffClass = (d)=> d==null?'d3': d<=30000000?'d0': d<=60000000?'d1': d<=120000000?'d2':'d3';
+  const fmtDate = (s)=> s? s.slice(2).replace(/-/g,'.') : '';
+  // 전용면적 → 타깃 버킷 (59 / 75 / 84), 그 외는 제외
+  const areaBucket = (e)=>{ if(e==null) return null; if(e>=56&&e<63) return 59; if(e>=73&&e<79) return 75; if(e>=80&&e<88) return 84; return null; };
+
+  if(!G){ document.body.innerHTML='<div class="wrap"><h1>데이터 없음</h1><p class="sub">먼저 <code>node gap-scrape.mjs</code> 실행</p></div>'; }
+  else {
+    $('#sub').textContent = `수집: ${new Date(G.updatedAt).toLocaleString('ko-KR')} · 실거래 최근 3개월(${G.dateRange.startDate}~${G.dateRange.endDate}) · 전용 59·75·84㎡`;
+
+    // 단지 정보 룩업 (모달용)
+    const INFO = {};
+    for(const complexes of Object.values(G.groups))
+      for(const c of complexes) INFO[c.complexId] = { name:c.complexName, info:c.info||{}, url:c.url };
+
+    // 그룹/전체 행
+    const groupData = Object.entries(G.groups).map(([gname,cs])=>({
+      gname, rows: cs.flatMap(c=>c.rows.map(r=>({...r, group:gname, complexId:c.complexId})))
+    }));
+    const topRows = groupData.flatMap(g=>g.rows).filter(r=>r.diff!=null);
+
+    const noneCell = '<span class="none">없음</span>';
+    const priceStack = (cls, med, min, max, cnt)=> med==null ? noneCell
+      : `<span class="${cls}">${eok(med)}</span>${cnt?`<div class="rng">${eok(min)}~${eok(max)}·${cnt}건</div>`:''}`;
+    const realCell = (cls, obj)=> obj ? `<span class="${cls}">${eok(obj.price)}</span><div class="date">${fmtDate(obj.date)}</div>` : noneCell;
+
+    const cells = (r, withGroup)=>{
+      const g = withGroup ? `<td class="l"><span class="grp">${esc(r.group)}</span></td>` : '';
+      return `${g}
+        <td class="cx cxlink" data-cid="${esc(r.complexId)}" title="${esc(r.complexName)} (클릭: 단지정보)">${esc(r.complexName)}</td>
+        <td class="l"><span class="area">${esc(r.pyeongLabel)}</span> <span class="py">전용${r.exclusive}㎡</span></td>
+        <td>${priceStack('sale', r.saleMed, r.saleMin, r.saleMax, r.saleCnt)}</td>
+        <td>${priceStack('lease', r.leaseMed, r.leaseMin, r.leaseMax, r.leaseCnt)}</td>
+        <td class="gap">${eok(r.listingGap)}</td>
+        <td>${realCell('sale', r.realSale)}</td>
+        <td>${realCell('lease', r.realLease)}</td>
+        <td class="gap">${r.realGap==null?noneCell:eok(r.realGap)}</td>
+        <td><span class="diff ${diffClass(r.diff)}">${r.diff==null?'-':eok(r.diff)}</span></td>`;
+    };
+    const arrow = (k, sk, sd)=> k===sk ? (sd==='asc'?' ▲':' ▼') : '';
+    const head = (withGroup, sk, sd)=>`<thead><tr>
+      ${withGroup?'<th class="l">그룹</th>':''}<th class="l">단지</th><th class="l">평형</th>
+      <th>매매 매물</th><th>전세 매물</th>
+      <th class="sortable" data-k="listingGap">매물갭${arrow('listingGap',sk,sd)}</th>
+      <th>실거래 매매</th><th>실거래 전세</th>
+      <th class="sortable" data-k="realGap">실거래갭${arrow('realGap',sk,sd)}</th>
+      <th class="sortable" data-k="diff">차이${arrow('diff',sk,sd)}</th>
+    </tr></thead>`;
+    const cmp = (a,b,k,dir)=>{ const an=a[k]==null,bn=b[k]==null; if(an&&bn)return 0; if(an)return 1; if(bn)return -1; return dir==='asc'?a[k]-b[k]:b[k]-a[k]; };
+
+    let currentArea = 'all';
+    function applyFilter(area){
+      currentArea = area;
+      document.querySelectorAll('#topN tbody tr, #groups tbody tr').forEach(t=>{
+        t.style.display = (area==='all' || t.dataset.area===area) ? '' : 'none';
+      });
+    }
+    function renderTable(table){
+      const withGroup = table.dataset.withGroup==='1';
+      const sk = table.dataset.sortK||'diff', sd = table.dataset.sortDir||'asc';
+      const rows = [...table._rows].sort((a,b)=>cmp(a,b,sk,sd));
+      table.innerHTML = head(withGroup,sk,sd) + '<tbody>' + rows.map(r=>
+        `<tr data-area="${r.bucket}" class="${r.diff==null?'nodata':''}">${cells(r,withGroup)}</tr>`).join('') + '</tbody>';
+      applyFilter(currentArea);
+    }
+
+    // TOP
+    const topEl = $('#topN'); topEl._rows = topRows; topEl.dataset.withGroup='1'; topEl.dataset.sortK='diff'; topEl.dataset.sortDir='asc';
+    renderTable(topEl);
+
+    // 동네 그룹별
+    $('#groups').innerHTML = groupData.map((g,i)=> g.rows.length ?
+      `<h2>📍 ${esc(g.gname)} <span class="pill">${g.rows.length}개 평형</span></h2>
+       <div class="card tablewrap"><table id="gt${i}"></table></div>` : '').join('');
+    groupData.forEach((g,i)=>{ if(!g.rows.length) return; const t=document.getElementById('gt'+i); t._rows=g.rows; t.dataset.withGroup='0'; t.dataset.sortK='diff'; t.dataset.sortDir='asc'; renderTable(t); });
+
+    // 정렬 헤더 클릭 (위임)
+    document.addEventListener('click', e=>{
+      const th=e.target.closest('th.sortable'); if(!th) return;
+      const table=th.closest('table'); const k=th.dataset.k;
+      if(table.dataset.sortK===k){ table.dataset.sortDir = table.dataset.sortDir==='asc'?'desc':'asc'; }
+      else { table.dataset.sortK=k; table.dataset.sortDir='asc'; }
+      renderTable(table);
+    });
+
+    // 평형 필터 버튼
+    document.querySelectorAll('#filters .fbtn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('#filters .fbtn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.area);
+      });
+    });
+
+    // 단지 정보 모달
+    const backdrop = $('#backdrop');
+    const closeModal = ()=> backdrop.classList.remove('show');
+    $('#mx').addEventListener('click', closeModal);
+    backdrop.addEventListener('click', e=>{ if(e.target===backdrop) closeModal(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+    function openInfo(cid){
+      const rec = INFO[cid]; if(!rec) return;
+      const i = rec.info || {};
+      const st = i.station;
+      $('#mt').innerHTML = rec.url
+        ? `<a href="${esc(rec.url)}" target="_blank" rel="noopener">${esc(rec.name)} ↗</a>`
+        : esc(rec.name);
+      const rows = [
+        ['준공', i.approvalYear ? `${i.approvalYear}년${i.elapsedYear!=null?` (${i.elapsedYear}년차)`:''}` : '정보 없음'],
+        ['세대수', i.households!=null ? `${i.households.toLocaleString()}세대${i.buildings?` · ${i.buildings}개동`:''}` : '정보 없음'],
+        ['최근접역', st ? `${st.name}${st.line?`(${st.line})`:''} · 도보 ${st.walkMin}분 (${st.walkDist}m)` : '정보 없음'],
+      ];
+      $('#mb').innerHTML = rows.map(([k,v])=>`<div class="minfo"><span class="k">${k}</span><span class="v">${esc(v)}</span></div>`).join('')
+        + (i.address ? `<div class="maddr">${esc(i.address.split(' ').filter((w,idx,a)=>a.indexOf(w)===idx).join(' '))}</div>` : '');
+      backdrop.classList.add('show');
+    }
+    document.addEventListener('click', e=>{ const cx=e.target.closest('.cxlink'); if(cx) openInfo(cx.dataset.cid); });
+  }
+</script>
+</body>
+</html>
