@@ -94,7 +94,7 @@
   </div>
 
   <h2>🎯 갭 근접 TOP <span class="pill">10건</span></h2>
-  <div class="sub" style="margin-top:-4px">네이버 부동산에 등록된 매매·전세 매물의 갭과 최근 3개월 실거래 갭의 차이로 순위를 매깁니다. 동과 층은 고려되지 않았으니 실제 매물을 확인해주세요.</div>
+  <div class="sub" style="margin-top:-4px">네이버 부동산에 등록된 매매·전세 매물의 갭과 최근 6개월 실거래 갭의 차이로 순위를 매깁니다. 동과 층은 고려되지 않았으니 실제 매물을 확인해주세요.</div>
   <div class="card tablewrap" style="margin-bottom:8px"><table id="topN"></table></div>
 
   <div id="groups"></div>
@@ -109,7 +109,7 @@
     <span><span class="dot" style="background:#e6836f"></span>양수 ▲ (매물갭 &gt; 실거래갭)</span>
     <span><span class="dot" style="background:#89b4ff"></span>음수 ▼ (매물갭 &lt; 실거래갭)</span>
     <span>· TOP=차이 큰음수→큰양수 순 · 동네별=단지로 묶음(캐럿으로 접기)</span>
-    <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 3개월)</span>
+    <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 6개월)</span>
     <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-tt2">역세권</span>300~600m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤500m &nbsp;<span class="bdg b-new">신축</span>준공≤7년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·위브</span>
   </div>
 </div>
@@ -128,7 +128,7 @@
   if(!G){ document.body.innerHTML='<div class="wrap"><h1>데이터 없음</h1><p class="sub">먼저 <code>node gap-scrape.mjs</code> 실행</p></div>'; }
   else {
     const collDate = new Date(G.updatedAt).toLocaleString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
-    $('#sub').innerHTML = `갭투자를 위한 시세 비교 대시보드입니다. 최근 3개월 실거래의 갭 가격과 현재 등록된 거래 가능 매물의 갭 가격을 비교합니다. 성공적인 갭 투자 되세요. 🍀`
+    $('#sub').innerHTML = `갭투자를 위한 시세 비교 대시보드입니다. 최근 6개월 실거래의 갭 가격과 현재 등록된 거래 가능 매물의 갭 가격을 비교합니다. 성공적인 갭 투자 되세요. 🍀`
       + `<div style="margin-top:7px;font-size:12px">📅 최종 수집일 <b>${collDate}</b> · 실거래 기준 <b>${G.dateRange.startDate} ~ ${G.dateRange.endDate}</b><br>🏠 <b>25평·30평·34평</b>(전용 59·75·84㎡) 매물만 수집합니다.</div>`;
 
     // 단지 정보 룩업 (모달용)

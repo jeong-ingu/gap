@@ -30,10 +30,10 @@ const median = (arr) => {
 };
 const pyeong = (supply) => Math.round(supply / 3.3058);
 
-// 날짜 범위: 실거래 최근 3개월
+// 날짜 범위: 실거래 최근 6개월
 function dateRange() {
   const end = new Date();
-  const start = new Date(end); start.setMonth(start.getMonth() - 3);
+  const start = new Date(end); start.setMonth(start.getMonth() - 6);
   const f = (d) => d.toISOString().slice(0, 10);
   return { startDate: f(start), endDate: f(end) };
 }

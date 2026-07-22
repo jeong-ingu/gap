@@ -43,10 +43,13 @@
               "price": 835000000,
               "date": "2026-05-05"
             },
-            "realLease": null,
+            "realLease": {
+              "price": 400000000,
+              "date": "2026-03-25"
+            },
             "listingGap": 390000000,
-            "realGap": null,
-            "diff": null
+            "realGap": 435000000,
+            "diff": 45000000
           }
         ]
       },
@@ -88,7 +91,10 @@
             "leaseMax": 400000000,
             "leaseMed": 400000000,
             "leaseCnt": 1,
-            "realSale": null,
+            "realSale": {
+              "price": 700000000,
+              "date": "2026-04-05"
+            },
             "realLease": null,
             "listingGap": 400000000,
             "realGap": null,
@@ -103,7 +109,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 900000000,
-            "saleCnt": 153,
+            "saleCnt": 152,
             "leaseMin": 400000000,
             "leaseMax": 450000000,
             "leaseMed": 430000000,
@@ -160,14 +166,17 @@
             "leaseMax": 420000000,
             "leaseMed": 420000000,
             "leaseCnt": 2,
-            "realSale": null,
+            "realSale": {
+              "price": 820000000,
+              "date": "2026-03-03"
+            },
             "realLease": {
               "price": 400000000,
               "date": "2026-06-19"
             },
             "listingGap": 430000000,
-            "realGap": null,
-            "diff": null
+            "realGap": 420000000,
+            "diff": 10000000
           }
         ]
       },
@@ -346,11 +355,11 @@
             "saleCnt": 9,
             "leaseMin": 280000000,
             "leaseMax": 350000000,
-            "leaseMed": 305000000,
-            "leaseCnt": 14,
+            "leaseMed": 315000000,
+            "leaseCnt": 16,
             "realSale": null,
             "realLease": null,
-            "listingGap": 254340000,
+            "listingGap": 244340000,
             "realGap": null,
             "diff": null
           },
@@ -510,7 +519,7 @@
             "saleMin": 680000000,
             "saleMax": 900000000,
             "saleMed": 780000000,
-            "saleCnt": 606,
+            "saleCnt": 616,
             "leaseMin": 350000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -588,7 +597,7 @@
             "saleMin": 760000000,
             "saleMax": 880000000,
             "saleMed": 820000000,
-            "saleCnt": 198,
+            "saleCnt": 197,
             "leaseMin": 380000000,
             "leaseMax": 450000000,
             "leaseMed": 410000000,
@@ -640,7 +649,7 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 713,
+            "saleCnt": 727,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -718,7 +727,7 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 562,
+            "saleCnt": 560,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
             "leaseMed": 440000000,
@@ -796,7 +805,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 429,
+            "saleCnt": 426,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -1197,11 +1206,11 @@
             "saleMin": 1200000000,
             "saleMax": 1600000000,
             "saleMed": 1300000000,
-            "saleCnt": 133,
+            "saleCnt": 132,
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 69,
+            "leaseCnt": 64,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -1275,7 +1284,7 @@
             "saleMin": 1100000000,
             "saleMax": 1200000000,
             "saleMed": 1150000000,
-            "saleCnt": 40,
+            "saleCnt": 39,
             "leaseMin": 680000000,
             "leaseMax": 680000000,
             "leaseMed": 680000000,
@@ -1296,9 +1305,9 @@
       }
     ]
   },
-  "updatedAt": "2026-07-22T14:28:29.117Z",
+  "updatedAt": "2026-07-22T14:47:06.916Z",
   "dateRange": {
-    "startDate": "2026-04-22",
+    "startDate": "2026-01-22",
     "endDate": "2026-07-22"
   }
 }
