@@ -79,8 +79,12 @@
   .minfo:last-child{border-bottom:none}
   .minfo .k{color:var(--muted)} .minfo .v{font-weight:700;text-align:right}
   .maddr{padding-top:10px;font-size:11px;color:var(--muted)}
-  .gaplink{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
-  .gaplink:hover{color:var(--gold)}
+  .gaplink,.matgap{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+  .gaplink:hover,.matgap:hover{color:var(--gold)}
+  .jrate{font-size:11px;color:var(--muted)}
+  .costrow{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .costrow:last-child{border-bottom:none}
+  .costrow .k{color:var(--muted)} .costrow .v{font-weight:700}
   .chartwrap{padding:12px 14px}
   .chartwrap svg{width:100%;height:auto;display:block}
   .cline{fill:none;stroke:var(--gold);stroke-width:2}
@@ -167,10 +171,12 @@
     }));
     const topRows = groupData.flatMap(g=>g.rows).filter(r=>r.diff!=null);
 
-    // 실거래 시계열 룩업 (갭 추이 차트용)
-    const ROWTX = {};
+    // 실거래 시계열 + 비용 룩업
+    const ROWTX = {}, COST = {};
     for(const g of groupData) for(const r of g.rows){
-      ROWTX[`${r.complexId}|${r.bucket}`] = { saleTx:r.saleTx||[], leaseTx:r.leaseTx||[], title:`${r.complexName} · ${r.pyeongLabel}` };
+      const key = `${r.complexId}|${r.bucket}`;
+      ROWTX[key] = { saleTx:r.saleTx||[], leaseTx:r.leaseTx||[], title:`${r.complexName} · ${r.pyeongLabel}` };
+      COST[key] = { costs:r.costs||null, title:`${r.complexName} · ${r.pyeongLabel}`, saleMed:r.saleMed };
     }
 
     const noneCell = '<span class="none">없음</span>';
@@ -195,16 +201,17 @@
         <td class="l"><span class="area">${esc(r.pyeongLabel)}</span> <span class="py">전용${r.exclusive}㎡</span></td>
         <td>${priceStack('sale', r.saleMed, r.saleMin, r.saleMax, r.saleCnt)}</td>
         <td>${priceStack('lease', r.leaseMed, r.leaseMin, r.leaseMax, r.leaseCnt)}</td>
-        <td class="gap">${eok(r.listingGap)}</td>
+        <td class="gap"><span class="matgap" data-gk="${esc(r.complexId)}|${r.bucket}">${eok(r.listingGap)}</span></td>
+        <td class="jrate">${(r.saleMed&&r.leaseMed)?Math.round(r.leaseMed/r.saleMed*100)+'%':'-'}</td>
         <td>${realCell('sale', r.realSale)}</td>
         <td>${realCell('lease', r.realLease)}</td>
         <td class="gap">${r.realGap==null?noneCell:`<span class="gaplink" data-gk="${esc(r.complexId)}|${r.bucket}">${eok(r.realGap)}</span>`}</td>
         <td>${diffCell(r)}</td>`;
     const cells = (r, withGroup)=> (withGroup?`<td class="l"><span class="grp">${esc(r.group)}</span></td>`:'') + complexTd(r) + restCells(r);
     const headTop = `<thead><tr><th class="l">그룹</th><th class="l">단지</th><th class="l">평형</th>
-      <th>매매 매물</th><th>전세 매물</th><th>매물갭</th><th>실거래 매매</th><th>실거래 전세</th><th>실거래갭</th><th>차이</th></tr></thead>`;
+      <th>매매 매물</th><th>전세 매물</th><th>매물갭</th><th class="jrate">전세가율</th><th>실거래 매매</th><th>실거래 전세</th><th>실거래갭</th><th>차이</th></tr></thead>`;
     const headGrp = `<thead><tr><th class="l">단지</th><th class="l">평형</th>
-      <th>매매 매물</th><th>전세 매물</th><th>매물갭</th><th>실거래 매매</th><th>실거래 전세</th><th>실거래갭</th><th>차이</th></tr></thead>`;
+      <th>매매 매물</th><th>전세 매물</th><th>매물갭</th><th class="jrate">전세가율</th><th>실거래 매매</th><th>실거래 전세</th><th>실거래갭</th><th>차이</th></tr></thead>`;
 
     let currentArea = 'all';
     function applyTopFilter(){
@@ -241,7 +248,7 @@
         for(const c of complexes){
           const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>${badges(c.complexId,c.complexName)}`;
           if(collapsed.has(c.complexId)){
-            body += `<tr><td class="cxcell">${cxName}</td><td class="l muted" colspan="8">${c.rows.length}개 평형 · 접힘</td></tr>`;
+            body += `<tr><td class="cxcell">${cxName}</td><td class="l muted" colspan="9">${c.rows.length}개 평형 · 접힘</td></tr>`;
           } else {
             c.rows.forEach((r,idx)=>{
               body += `<tr data-area="${r.bucket}" class="${r.diff==null?'nodata':''}">`
@@ -343,6 +350,28 @@
       backdrop.classList.add('show');
     }
     document.addEventListener('click', e=>{ const gl=e.target.closest('.gaplink'); if(gl) openGapChart(gl.dataset.gk); });
+
+    // 매물갭 클릭 → 비용(취득세·중개수수료·보유세·관리비) 모달
+    const manwon = (n)=> n==null ? '-' : (n>=1e8 ? eok(n) : Math.round(n/1e4).toLocaleString()+'만');
+    function openCost(gk){
+      const rec=COST[gk]; if(!rec) return;
+      const c=rec.costs;
+      $('#mt').textContent = `${rec.title} · 예상 비용`;
+      if(!c || (c.acquisitionTax==null && c.agentFee==null && c.propertyTax==null && c.maintenanceFee==null)){
+        $('#mb').innerHTML = `<div class="cnote" style="padding:16px 14px">비용 정보를 불러오지 못했습니다.</div>`;
+      } else {
+        const rows=[
+          ['취득세(총)', c.acquisitionTax],
+          ['중개수수료', c.agentFee],
+          ['보유세(재산세·연)', c.propertyTax],
+          ['관리비(월평균)', c.maintenanceFee],
+        ];
+        $('#mb').innerHTML = rows.map(([k,v])=>`<div class="costrow"><span class="k">${k}</span><span class="v">${manwon(v)}</span></div>`).join('')
+          + `<div class="cnote">대표 매매 호가 <b>${eok(rec.saleMed)}</b> 기준 · 1주택 표준 가정 추정치(다주택·생애최초 등은 상이)</div>`;
+      }
+      backdrop.classList.add('show');
+    }
+    document.addEventListener('click', e=>{ const mg=e.target.closest('.matgap'); if(mg) openCost(mg.dataset.gk); });
   }
 </script>
 </body>

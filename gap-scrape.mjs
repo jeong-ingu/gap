@@ -59,7 +59,7 @@ async function collectComplex(page, cid, dr) {
           const rep = it.representativeArticleInfo;
           const dup = it.duplicatedArticleInfo?.articleInfoList;
           const arr = (dup && dup.length) ? dup : [rep];
-          for (const a of arr) if (a) items.push({ excl: a.spaceInfo?.exclusiveSpace, price: a.priceInfo?.dealPrice || a.priceInfo?.warrantyPrice || 0, name: rep?.complexName });
+          for (const a of arr) if (a) items.push({ articleNumber: a.articleNumber, excl: a.spaceInfo?.exclusiveSpace, price: a.priceInfo?.dealPrice || a.priceInfo?.warrantyPrice || 0, name: rep?.complexName });
         }
         if (!r.hasNextPage) break; lastInfo = r.lastInfo ?? [];
       }
@@ -136,7 +136,7 @@ function buildRows(cid, raw) {
     if (x.excl == null) return null;
     let best = null, bd = 1e9;
     for (const pt of raw.pyeongs) { const d = Math.abs(pt.excl - x.excl); if (d < bd) { bd = d; best = pt; } }
-    return (best && bd < 2.0) ? { ptNum: best.number, price: x.price } : null;
+    return (best && bd < 2.0) ? { ptNum: best.number, price: x.price, articleNumber: x.articleNumber } : null;
   }).filter(Boolean);
   const aA1 = assign(raw.artA1), aB1 = assign(raw.artB1);
 
@@ -153,8 +153,11 @@ function buildRows(cid, raw) {
   for (const k of [59, 75, 84]) {
     const b = buckets[k]; if (!b) continue;
     const ptSet = new Set(b.pts.map(p => p.number));
-    const saleList = aA1.filter(x => ptSet.has(x.ptNum)).map(x => x.price).filter(Boolean);
+    const saleAssigned = aA1.filter(x => ptSet.has(x.ptNum) && x.price).sort((a, b2) => a.price - b2.price);
+    const saleList = saleAssigned.map(x => x.price);
     const leaseList = aB1.filter(x => ptSet.has(x.ptNum)).map(x => x.price).filter(Boolean);
+    const repSaleArticle = saleAssigned[0]?.articleNumber || null; // 최저가 매매 대표
+    const repPyeongNum = b.pts[0].number;
     const tx = (tt) => b.pts.flatMap(p => (raw.real[p.number]?.[tt] || []));
     const salesTx = tx('A1').filter(t => !t.isDelete && t.dealPrice && t.propertyType === 'NORMAL');
     const leaseTx = tx('B1').filter(t => !t.isDelete && !t.isRenew && t.deposit && t.propertyType === 'NORMAL'); // 갱신 제외
@@ -179,10 +182,32 @@ function buildRows(cid, raw) {
       // 실거래 시계열(추이 차트용) — 오름차순
       saleTx: salesTx.map(t => ({ date: t.tradeDate, price: t.dealPrice })).sort((a, b) => a.date.localeCompare(b.date)),
       leaseTx: leaseTx.map(t => ({ date: t.tradeDate, price: t.deposit })).sort((a, b) => a.date.localeCompare(b.date)),
+      repSaleArticle, repPyeongNum,
       listingGap, realGap, diff,
     });
   }
   return rows;
+}
+
+// 비용 정보: 취득세·재산세(보유세)·중개수수료(대표 매매 매물) + 관리비(평형)
+async function fetchCosts(page, cid, reqs) {
+  return await page.evaluate(async ({ cid, reqs }) => {
+    const g = async (u) => { try { const r = await fetch(u, { headers: { Accept: 'application/json' } }); return await r.json(); } catch { return null; } };
+    const B = '/front-api/v1';
+    const out = {};
+    for (const q of reqs) {
+      let acq = null, prop = null, fee = null, mfee = null;
+      if (q.articleNumber) {
+        const t = (await g(`${B}/article/tax?articleNumber=${q.articleNumber}`))?.result;
+        const at = t?.acquisitionTax; if (at) acq = (at.acquisitionTax || 0) + (at.localTax || 0) + (at.ruralSpecialTax || 0);
+        const pp = t?.propertyTax; if (pp) prop = (pp.propertyTax || 0) + (pp.localEducationTax || 0) + (pp.urbanAreaSegmentTax || 0);
+        fee = (await g(`${B}/article/agentFee?articleNumber=${q.articleNumber}`))?.result?.fee ?? null;
+      }
+      if (q.pyeongTypeNumber != null) mfee = (await g(`${B}/complex/maintenanceFee?complexNumber=${cid}&pyeongTypeNumber=${q.pyeongTypeNumber}`))?.result?.monthAverageFee ?? null;
+      out[q.bucket] = { acquisitionTax: acq, propertyTax: prop, agentFee: fee, maintenanceFee: mfee };
+    }
+    return out;
+  }, { cid, reqs });
 }
 
 async function main() {
@@ -204,6 +229,9 @@ async function main() {
         await page.waitForTimeout(5000);
         const raw = await collectComplex(page, cid, dr);
         const rows = buildRows(cid, raw);
+        // 비용 정보(취득세·중개수수료·보유세·관리비) — 대표 매매 매물 기준
+        const costs = await fetchCosts(page, cid, rows.map(r => ({ bucket: r.bucket, articleNumber: r.repSaleArticle, pyeongTypeNumber: r.repPyeongNum })));
+        rows.forEach(r => { r.costs = costs[r.bucket] || null; });
         result.groups[gname].push({ complexId: cid, complexName: raw.complexName || cid, info: raw.info, url, rows });
         const st = raw.info?.station;
         console.error(`[${gname}] ${cid} ${raw.complexName || ''} — 평형 ${rows.length}, 준공 ${raw.info?.approvalYear || '?'}, 세대 ${raw.info?.households || '?'}, 역 ${st ? st.name + ' ' + st.walkMin + '분' : '?'}`);

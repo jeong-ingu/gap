@@ -34,7 +34,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 870000000,
-            "saleCnt": 208,
+            "saleCnt": 207,
             "leaseMin": 400000000,
             "leaseMax": 500000000,
             "leaseMed": 480000000,
@@ -75,9 +75,17 @@
                 "price": 400000000
               }
             ],
+            "repSaleArticle": "2639392127",
+            "repPyeongNum": 1,
             "listingGap": 390000000,
             "realGap": 435000000,
-            "diff": 45000000
+            "diff": 45000000,
+            "costs": {
+              "acquisitionTax": 23520000,
+              "propertyTax": 452800,
+              "agentFee": 3360000,
+              "maintenanceFee": 282798
+            }
           }
         ]
       },
@@ -131,9 +139,17 @@
               }
             ],
             "leaseTx": [],
+            "repSaleArticle": "2639501610",
+            "repPyeongNum": 1,
             "listingGap": 400000000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 18720000,
+              "propertyTax": 417680,
+              "agentFee": 3120000,
+              "maintenanceFee": 231218
+            }
           },
           {
             "complexId": "148541",
@@ -144,7 +160,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 900000000,
-            "saleCnt": 152,
+            "saleCnt": 148,
             "leaseMin": 400000000,
             "leaseMax": 450000000,
             "leaseMed": 430000000,
@@ -241,9 +257,17 @@
                 "price": 330000000
               }
             ],
+            "repSaleArticle": "2639169832",
+            "repPyeongNum": 3,
             "listingGap": 470000000,
             "realGap": 555000000,
-            "diff": 85000000
+            "diff": 85000000,
+            "costs": {
+              "acquisitionTax": 23520000,
+              "propertyTax": 471180,
+              "agentFee": 3360000,
+              "maintenanceFee": 262132
+            }
           }
         ]
       },
@@ -321,9 +345,17 @@
                 "price": 400000000
               }
             ],
+            "repSaleArticle": "2637953105",
+            "repPyeongNum": 1,
             "listingGap": 430000000,
             "realGap": 420000000,
-            "diff": 10000000
+            "diff": 10000000,
+            "costs": {
+              "acquisitionTax": 20240000,
+              "propertyTax": 377560,
+              "agentFee": 3200000,
+              "maintenanceFee": 274067
+            }
           }
         ]
       },
@@ -360,7 +392,7 @@
             "saleMin": 650000000,
             "saleMax": 700000000,
             "saleMed": 650000000,
-            "saleCnt": 26,
+            "saleCnt": 24,
             "leaseMin": null,
             "leaseMax": null,
             "leaseMed": null,
@@ -369,9 +401,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
+            "repSaleArticle": "2639298025",
+            "repPyeongNum": 1,
             "listingGap": null,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 9945000,
+              "propertyTax": 372540,
+              "agentFee": 2600000,
+              "maintenanceFee": 237440
+            }
           },
           {
             "complexId": "148117",
@@ -381,8 +421,8 @@
             "exclusive": 84.8,
             "saleMin": 760000000,
             "saleMax": 830000000,
-            "saleMed": 800000000,
-            "saleCnt": 15,
+            "saleMed": 790000000,
+            "saleCnt": 14,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -391,9 +431,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
-            "listingGap": 400000000,
+            "repSaleArticle": "2639043909",
+            "repPyeongNum": 3,
+            "listingGap": 390000000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 17252000,
+              "propertyTax": 439420,
+              "agentFee": 3040000,
+              "maintenanceFee": 268825
+            }
           }
         ]
       },
@@ -502,9 +550,17 @@
                 "price": 310000000
               }
             ],
+            "repSaleArticle": "2639172964",
+            "repPyeongNum": 1,
             "listingGap": null,
             "realGap": 149000000,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 6490000,
+              "propertyTax": null,
+              "agentFee": 2360000,
+              "maintenanceFee": 245127
+            }
           },
           {
             "complexId": "156458",
@@ -588,9 +644,17 @@
                 "price": 350000000
               }
             ],
+            "repSaleArticle": "2637768567",
+            "repPyeongNum": 2,
             "listingGap": null,
             "realGap": 191000000,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 13090000,
+              "propertyTax": null,
+              "agentFee": 2800000,
+              "maintenanceFee": 276966
+            }
           }
         ]
       },
@@ -630,15 +694,23 @@
             "saleCnt": 9,
             "leaseMin": 280000000,
             "leaseMax": 350000000,
-            "leaseMed": 315000000,
-            "leaseCnt": 16,
+            "leaseMed": 310000000,
+            "leaseCnt": 13,
             "realSale": null,
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
-            "listingGap": 244340000,
+            "repSaleArticle": "2637280537",
+            "repPyeongNum": 1,
+            "listingGap": 249340000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 5980370,
+              "propertyTax": null,
+              "agentFee": null,
+              "maintenanceFee": null
+            }
           },
           {
             "complexId": "153397",
@@ -649,7 +721,7 @@
             "saleMin": 587740000,
             "saleMax": 663630000,
             "saleMed": 636010000,
-            "saleCnt": 31,
+            "saleCnt": 29,
             "leaseMin": 300000000,
             "leaseMax": 400000000,
             "leaseMed": 330000000,
@@ -658,9 +730,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
+            "repSaleArticle": "2635105356",
+            "repPyeongNum": 4,
             "listingGap": 306010000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 6465140,
+              "propertyTax": null,
+              "agentFee": null,
+              "maintenanceFee": null
+            }
           }
         ]
       },
@@ -885,9 +965,17 @@
                 "price": 300000000
               }
             ],
+            "repSaleArticle": "2638322419",
+            "repPyeongNum": 1,
             "listingGap": 209950000,
             "realGap": 210000000,
-            "diff": 50000
+            "diff": 50000,
+            "costs": {
+              "acquisitionTax": 5126000,
+              "propertyTax": null,
+              "agentFee": 1860000,
+              "maintenanceFee": null
+            }
           },
           {
             "complexId": "167518",
@@ -899,10 +987,10 @@
             "saleMax": 660000000,
             "saleMed": 625000000,
             "saleCnt": 21,
-            "leaseMin": 350000000,
+            "leaseMin": 370000000,
             "leaseMax": 430000000,
             "leaseMed": 420000000,
-            "leaseCnt": 16,
+            "leaseCnt": 15,
             "realSale": {
               "price": 614680000,
               "date": "2026-07-10"
@@ -955,9 +1043,17 @@
                 "price": 350000000
               }
             ],
+            "repSaleArticle": "2639170646",
+            "repPyeongNum": 4,
             "listingGap": 205000000,
             "realGap": 264680000,
-            "diff": 59680000
+            "diff": 59680000,
+            "costs": {
+              "acquisitionTax": 6336000,
+              "propertyTax": null,
+              "agentFee": 2300000,
+              "maintenanceFee": null
+            }
           }
         ]
       }
@@ -996,7 +1092,7 @@
             "saleMin": 670000000,
             "saleMax": 780000000,
             "saleMed": 700000000,
-            "saleCnt": 276,
+            "saleCnt": 270,
             "leaseMin": 380000000,
             "leaseMax": 420000000,
             "leaseMed": 400000000,
@@ -1185,9 +1281,17 @@
                 "price": 380000000
               }
             ],
+            "repSaleArticle": "2639324295",
+            "repPyeongNum": 1,
             "listingGap": 300000000,
             "realGap": 323000000,
-            "diff": 23000000
+            "diff": 23000000,
+            "costs": {
+              "acquisitionTax": 11189000,
+              "propertyTax": 429380,
+              "agentFee": 2680000,
+              "maintenanceFee": 258645
+            }
           },
           {
             "complexId": "124846",
@@ -1379,9 +1483,17 @@
                 "price": 430000000
               }
             ],
+            "repSaleArticle": "2639358284",
+            "repPyeongNum": 3,
             "listingGap": 360000000,
             "realGap": 330000000,
-            "diff": 30000000
+            "diff": 30000000,
+            "costs": {
+              "acquisitionTax": 11764000,
+              "propertyTax": 462820,
+              "agentFee": 2720000,
+              "maintenanceFee": 291709
+            }
           }
         ]
       },
@@ -1418,7 +1530,7 @@
             "saleMin": 690000000,
             "saleMax": 780000000,
             "saleMed": 720000000,
-            "saleCnt": 225,
+            "saleCnt": 215,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -1659,9 +1771,17 @@
                 "price": 400000000
               }
             ],
+            "repSaleArticle": "2639490091",
+            "repPyeongNum": 1,
             "listingGap": 320000000,
             "realGap": 260000000,
-            "diff": 60000000
+            "diff": 60000000,
+            "costs": {
+              "acquisitionTax": 12420000,
+              "propertyTax": 409320,
+              "agentFee": 2760000,
+              "maintenanceFee": 259325
+            }
           },
           {
             "complexId": "124978",
@@ -1676,7 +1796,7 @@
             "leaseMin": 380000000,
             "leaseMax": 450000000,
             "leaseMed": 410000000,
-            "leaseCnt": 54,
+            "leaseCnt": 53,
             "realSale": {
               "price": 814000000,
               "date": "2026-07-11"
@@ -1897,9 +2017,17 @@
                 "price": 450000000
               }
             ],
+            "repSaleArticle": "2638982065",
+            "repPyeongNum": 3,
             "listingGap": 410000000,
             "realGap": 364000000,
-            "diff": 46000000
+            "diff": 46000000,
+            "costs": {
+              "acquisitionTax": 17252000,
+              "propertyTax": 511320,
+              "agentFee": 3040000,
+              "maintenanceFee": 296506
+            }
           }
         ]
       },
@@ -1936,7 +2064,7 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 715,
+            "saleCnt": 719,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -2177,9 +2305,17 @@
                 "price": 400000000
               }
             ],
+            "repSaleArticle": "2639374494",
+            "repPyeongNum": 3,
             "listingGap": 330000000,
             "realGap": 300000000,
-            "diff": 30000000
+            "diff": 30000000,
+            "costs": {
+              "acquisitionTax": 13090000,
+              "propertyTax": 479540,
+              "agentFee": 2800000,
+              "maintenanceFee": 312129
+            }
           }
         ]
       },
@@ -2285,9 +2421,17 @@
                 "price": 370000000
               }
             ],
+            "repSaleArticle": "2638852040",
+            "repPyeongNum": 1,
             "listingGap": 300000000,
             "realGap": 264000000,
-            "diff": 36000000
+            "diff": 36000000,
+            "costs": {
+              "acquisitionTax": 8246000,
+              "propertyTax": 365840,
+              "agentFee": 2480000,
+              "maintenanceFee": 254189
+            }
           },
           {
             "complexId": "124980",
@@ -2298,7 +2442,7 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 557,
+            "saleCnt": 539,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
             "leaseMed": 440000000,
@@ -2555,9 +2699,17 @@
                 "price": 415000000
               }
             ],
+            "repSaleArticle": "2638404740",
+            "repPyeongNum": 2,
             "listingGap": 310000000,
             "realGap": 265000000,
-            "diff": 45000000
+            "diff": 45000000,
+            "costs": {
+              "acquisitionTax": 13090000,
+              "propertyTax": 429380,
+              "agentFee": 2800000,
+              "maintenanceFee": 284655
+            }
           }
         ]
       },
@@ -2593,8 +2745,8 @@
             "exclusive": 76.5,
             "saleMin": 590000000,
             "saleMax": 670000000,
-            "saleMed": 620000000,
-            "saleCnt": 104,
+            "saleMed": 615000000,
+            "saleCnt": 84,
             "leaseMin": 340000000,
             "leaseMax": 370000000,
             "leaseMed": 350000000,
@@ -2707,9 +2859,17 @@
                 "price": 350000000
               }
             ],
-            "listingGap": 270000000,
+            "repSaleArticle": "2634886537",
+            "repPyeongNum": 2,
+            "listingGap": 265000000,
             "realGap": 250000000,
-            "diff": 20000000
+            "diff": 15000000,
+            "costs": {
+              "acquisitionTax": 6490000,
+              "propertyTax": 348370,
+              "agentFee": 2360000,
+              "maintenanceFee": 263011
+            }
           },
           {
             "complexId": "128035",
@@ -2720,7 +2880,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 419,
+            "saleCnt": 421,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -2929,9 +3089,17 @@
                 "price": 297000000
               }
             ],
+            "repSaleArticle": "2639380282",
+            "repPyeongNum": 3,
             "listingGap": 240000000,
             "realGap": 286000000,
-            "diff": 46000000
+            "diff": 46000000,
+            "costs": {
+              "acquisitionTax": 6270000,
+              "propertyTax": 372540,
+              "agentFee": 2280000,
+              "maintenanceFee": 291561
+            }
           }
         ]
       },
@@ -3077,9 +3245,17 @@
                 "price": 405000000
               }
             ],
+            "repSaleArticle": null,
+            "repPyeongNum": 1,
             "listingGap": null,
             "realGap": 209000000,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": null,
+              "propertyTax": null,
+              "agentFee": null,
+              "maintenanceFee": 166075
+            }
           }
         ]
       }
@@ -3507,9 +3683,17 @@
                 "price": 570000000
               }
             ],
+            "repSaleArticle": "2639448603",
+            "repPyeongNum": 1,
             "listingGap": 420000000,
             "realGap": 380000000,
-            "diff": 40000000
+            "diff": 40000000,
+            "costs": {
+              "acquisitionTax": 28800000,
+              "propertyTax": 573180,
+              "agentFee": 4500000,
+              "maintenanceFee": 199732
+            }
           },
           {
             "complexId": "112054",
@@ -3520,7 +3704,7 @@
             "saleMin": 1070000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 289,
+            "saleCnt": 276,
             "leaseMin": 600000000,
             "leaseMax": 650000000,
             "leaseMed": 620000000,
@@ -3953,9 +4137,17 @@
                 "price": 650000000
               }
             ],
+            "repSaleArticle": "2639472405",
+            "repPyeongNum": 11,
             "listingGap": 530000000,
             "realGap": 449000000,
-            "diff": 81000000
+            "diff": 81000000,
+            "costs": {
+              "acquisitionTax": 35310000,
+              "propertyTax": 645080,
+              "agentFee": 5350000,
+              "maintenanceFee": 283543
+            }
           }
         ]
       },
@@ -4001,9 +4193,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
+            "repSaleArticle": "2638654654",
+            "repPyeongNum": 2,
             "listingGap": 600000000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 36300000,
+              "propertyTax": null,
+              "agentFee": 5500000,
+              "maintenanceFee": 147306
+            }
           },
           {
             "complexId": "147880",
@@ -4023,9 +4223,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
+            "repSaleArticle": "2639072534",
+            "repPyeongNum": 10,
             "listingGap": 535000000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 41250000,
+              "propertyTax": null,
+              "agentFee": 7500000,
+              "maintenanceFee": 184218
+            }
           },
           {
             "complexId": "147880",
@@ -4035,8 +4243,8 @@
             "exclusive": 84.8,
             "saleMin": 1270000000,
             "saleMax": 1600000000,
-            "saleMed": 1525000000,
-            "saleCnt": 36,
+            "saleMed": 1500000000,
+            "saleCnt": 35,
             "leaseMin": 610000000,
             "leaseMax": 850000000,
             "leaseMed": 800000000,
@@ -4045,9 +4253,17 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
-            "listingGap": 725000000,
+            "repSaleArticle": "2638973562",
+            "repPyeongNum": 7,
+            "listingGap": 700000000,
             "realGap": null,
-            "diff": null
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 41910000,
+              "propertyTax": null,
+              "agentFee": 7620000,
+              "maintenanceFee": 208466
+            }
           }
         ]
       },
@@ -4189,9 +4405,17 @@
                 "price": 420000000
               }
             ],
+            "repSaleArticle": "2637469325",
+            "repPyeongNum": 1,
             "listingGap": 420000000,
             "realGap": 480000000,
-            "diff": 60000000
+            "diff": 60000000,
+            "costs": {
+              "acquisitionTax": 24395000,
+              "propertyTax": 464500,
+              "agentFee": 3400000,
+              "maintenanceFee": 189893
+            }
           },
           {
             "complexId": "9223",
@@ -4299,9 +4523,17 @@
                 "price": 390000000
               }
             ],
+            "repSaleArticle": "2634111261",
+            "repPyeongNum": 2,
             "listingGap": 410000000,
             "realGap": 542000000,
-            "diff": 132000000
+            "diff": 132000000,
+            "costs": {
+              "acquisitionTax": 31350000,
+              "propertyTax": 553120,
+              "agentFee": 4750000,
+              "maintenanceFee": 272654
+            }
           }
         ]
       },
@@ -4365,11 +4597,11 @@
             "saleMin": 1050000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 64,
+            "saleCnt": 63,
             "leaseMin": 630000000,
             "leaseMax": 670000000,
             "leaseMed": 650000000,
-            "leaseCnt": 15,
+            "leaseCnt": 14,
             "realSale": {
               "price": 1155000000,
               "date": "2026-06-13"
@@ -4442,9 +4674,17 @@
                 "price": 640000000
               }
             ],
+            "repSaleArticle": "2639381144",
+            "repPyeongNum": 1,
             "listingGap": 500000000,
             "realGap": 515000000,
-            "diff": 15000000
+            "diff": 15000000,
+            "costs": {
+              "acquisitionTax": 34650000,
+              "propertyTax": 737040,
+              "agentFee": 5250000,
+              "maintenanceFee": null
+            }
           },
           {
             "complexId": "121277",
@@ -4455,11 +4695,11 @@
             "saleMin": 1200000000,
             "saleMax": 1600000000,
             "saleMed": 1300000000,
-            "saleCnt": 132,
+            "saleCnt": 131,
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 68,
+            "leaseCnt": 65,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -4628,9 +4868,17 @@
                 "price": 650000000
               }
             ],
+            "repSaleArticle": "2634183035",
+            "repPyeongNum": 3,
             "listingGap": 600000000,
             "realGap": 540000000,
-            "diff": 60000000
+            "diff": 60000000,
+            "costs": {
+              "acquisitionTax": 39600000,
+              "propertyTax": 1088640,
+              "agentFee": 7200000,
+              "maintenanceFee": null
+            }
           }
         ]
       },
@@ -4948,9 +5196,17 @@
                 "price": 580000000
               }
             ],
+            "repSaleArticle": "2637902279",
+            "repPyeongNum": 1,
             "listingGap": 330000000,
             "realGap": 380000000,
-            "diff": 50000000
+            "diff": 50000000,
+            "costs": {
+              "acquisitionTax": 28800000,
+              "propertyTax": 566480,
+              "agentFee": 4500000,
+              "maintenanceFee": 203407
+            }
           },
           {
             "complexId": "101283",
@@ -4961,7 +5217,7 @@
             "saleMin": 1100000000,
             "saleMax": 1200000000,
             "saleMed": 1150000000,
-            "saleCnt": 40,
+            "saleCnt": 38,
             "leaseMin": 680000000,
             "leaseMax": 680000000,
             "leaseMed": 680000000,
@@ -5294,15 +5550,23 @@
                 "price": 700000000
               }
             ],
+            "repSaleArticle": "2638754111",
+            "repPyeongNum": 4,
             "listingGap": 470000000,
             "realGap": 450000000,
-            "diff": 20000000
+            "diff": 20000000,
+            "costs": {
+              "acquisitionTax": 36300000,
+              "propertyTax": 625000,
+              "agentFee": 5500000,
+              "maintenanceFee": 288279
+            }
           }
         ]
       }
     ]
   },
-  "updatedAt": "2026-07-22T15:01:01.449Z",
+  "updatedAt": "2026-07-22T15:28:46.276Z",
   "dateRange": {
     "startDate": "2026-01-22",
     "endDate": "2026-07-22"
