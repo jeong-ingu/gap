@@ -195,9 +195,7 @@
         complexes.sort((a,b)=> walkOf(a.complexId)-walkOf(b.complexId));
         let body='';
         for(const c of complexes){
-          const st = INFO[c.complexId]?.info?.station;
-          const sub = st ? `<div class="cxsub">${esc(st.name)} 도보 ${st.walkMin}분 · ${st.walkDist}m</div>` : `<div class="cxsub">역 정보 없음</div>`;
-          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>${sub}`;
+          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>`;
           if(collapsed.has(c.complexId)){
             body += `<tr><td class="cxcell">${cxName}</td><td class="l muted" colspan="8">${c.rows.length}개 평형 · 접힘</td></tr>`;
           } else {
