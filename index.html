@@ -41,6 +41,9 @@
   .diff{font-weight:800;padding:2px 9px;border-radius:999px;display:inline-block;min-width:52px;text-align:center}
   .d0{color:var(--d0);background:var(--d0bg)} .d1{color:var(--d1);background:var(--d1bg)}
   .d2{color:var(--d2);background:var(--d2bg)} .d3{color:var(--d3);background:var(--d3bg)}
+  .dpos{color:#e6836f;background:rgba(230,110,90,.15)}   /* 양수: 매물갭>실거래갭 */
+  .dneg{color:#89b4ff;background:rgba(120,160,255,.15)}  /* 음수: 매물갭<실거래갭 */
+  .dzero{color:var(--muted);background:var(--d3bg)}
   tr.nodata td{opacity:.5}
   .date{color:var(--muted);font-size:10px}
   .filters{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
@@ -87,10 +90,10 @@
   </div>
 
   <div class="legend">
-    <span><span class="dot" style="background:var(--d0)"></span>차이 ≤ 0.3억</span>
-    <span><span class="dot" style="background:var(--d1)"></span>≤ 0.6억</span>
-    <span><span class="dot" style="background:var(--d2)"></span>≤ 1.2억</span>
-    <span><span class="dot" style="background:var(--d3)"></span>그 이상 / 실거래 없음</span>
+    <span>차이 = 매물갭 − 실거래갭 ·</span>
+    <span><span class="dot" style="background:#e6836f"></span>양수 ▲ (매물갭 &gt; 실거래갭)</span>
+    <span><span class="dot" style="background:#89b4ff"></span>음수 ▼ (매물갭 &lt; 실거래갭)</span>
+    <span>· 정렬은 차이 절댓값(가까운 순) 기준</span>
     <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 3개월)</span>
   </div>
 </div>
@@ -137,7 +140,17 @@
         <td>${realCell('sale', r.realSale)}</td>
         <td>${realCell('lease', r.realLease)}</td>
         <td class="gap">${r.realGap==null?noneCell:eok(r.realGap)}</td>
-        <td><span class="diff ${diffClass(r.diff)}">${r.diff==null?'-':eok(r.diff)}</span></td>`;
+        <td>${diffCell(r)}</td>`;
+    };
+    // 차이 = 매물갭 − 실거래갭 (부호). 양수 빨강▲ / 음수 파랑▼
+    const diffCell = (r)=>{
+      if(r.listingGap==null || r.realGap==null) return '<span class="diff dzero">-</span>';
+      const s = r.listingGap - r.realGap;
+      const label = eok(Math.abs(s));
+      if(label==='0억') return '<span class="diff dzero">0억</span>'; // 반올림상 동일
+      const cls = s>0?'dpos':'dneg';
+      const arw = s>0?'▲ ':'▼ ';
+      return `<span class="diff ${cls}">${arw}${label}</span>`;
     };
     const arrow = (k, sk, sd)=> k===sk ? (sd==='asc'?' ▲':' ▼') : '';
     const head = (withGroup, sk, sd)=>`<thead><tr>
