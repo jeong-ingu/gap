@@ -82,6 +82,16 @@
   .gaplink,.matgap{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
   .gaplink:hover,.matgap:hover{color:var(--gold)}
   .jrate{font-size:11px;color:var(--muted)}
+  .reco{border:1.5px solid var(--gold);border-radius:14px;padding:15px 18px;margin:8px 0 24px;background:linear-gradient(135deg,rgba(217,178,74,.10),rgba(217,178,74,.02))}
+  .reco .rtag{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.5px}
+  .reco .rtitle{font-size:17px;font-weight:800;margin:6px 0 2px}
+  .reco .rtitle a{color:var(--text);text-decoration:none}
+  .reco .rtitle a:hover{text-decoration:underline}
+  .reco .rtitle span{font-size:12px;font-weight:400;color:var(--muted)}
+  .reco .rfig{font-size:13px;color:var(--text);margin:6px 0 8px}
+  .reco .rfig b{color:var(--gold)}
+  .reco .rreason{font-size:13px;color:var(--muted);line-height:1.65}
+  .reco .rreason b{color:var(--text)}
   .costrow{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
   .costrow:last-child{border-bottom:none}
   .costrow .k{color:var(--muted)} .costrow .v{font-weight:700}
@@ -105,6 +115,8 @@
     <button class="fbtn" data-area="75">75㎡</button>
     <button class="fbtn" data-area="84">84㎡</button>
   </div>
+
+  <div id="reco"></div>
 
   <h2>🎯 갭 근접 TOP <span class="pill">10건</span></h2>
   <div class="sub" style="margin-top:-4px">네이버 부동산에 등록된 매매·전세 매물의 갭과 최근 6개월 실거래 갭의 차이로 순위를 매깁니다. 동과 층은 고려되지 않았으니 실제 매물을 확인해주세요.</div>
@@ -375,6 +387,19 @@
       backdrop.classList.add('show');
     }
     document.addEventListener('click', e=>{ const mg=e.target.closest('.matgap'); if(mg) openCost(mg.dataset.gk); });
+
+    // ⭐ 추천 매물 — 검단금호어울림센트럴(AB14BL) 30평
+    const rr = groupData.flatMap(g=>g.rows).find(r=>r.complexId==='124846' && r.bucket===75);
+    if(rr){
+      const url = INFO['124846']?.url || '#';
+      const rate = (rr.saleMed&&rr.leaseMed)?Math.round(rr.leaseMed/rr.saleMed*100)+'%':'-';
+      $('#reco').innerHTML = `<div class="reco">
+        <div class="rtag">⭐ 추천 매물!</div>
+        <div class="rtitle"><a href="${esc(url)}" target="_blank" rel="noopener">검단금호어울림센트럴(AB14BL) · 30평 <span>전용 ${rr.exclusive}㎡ · 아라역</span></a></div>
+        <div class="rfig"><b>매물 갭 ${eok(rr.listingGap)}</b> · 전세가율 ${rate} · 실거래갭 ${eok(rr.realGap)} · 매매 ${eok(rr.saleMin)}~${eok(rr.saleMax)}</div>
+        <div class="rreason"><b>단 3억대의 저렴한 갭</b>으로 진입 부담이 적고, <b>아라역 대장 단지</b>로 지역 내 시세를 리드합니다. 여기에 <b>5호선 연장 호재</b>까지 더해져 개통 기대감에 따른 향후 상승 여력이 큰, 갭투자 최적의 매물입니다. 🚀</div>
+      </div>`;
+    }
   }
 </script>
 </body>
