@@ -43,6 +43,7 @@
   .caret{cursor:pointer;color:var(--gold-dim);margin-right:6px;user-select:none;display:inline-block;width:12px}
   .caret:hover{color:var(--gold)}
   td.muted{color:var(--muted);font-style:italic}
+  .cxsub{font-size:10.5px;color:var(--muted);font-weight:400;margin-top:3px}
   .diff{font-weight:800;padding:2px 9px;border-radius:999px;display:inline-block;min-width:52px;text-align:center}
   .d0{color:var(--d0);background:var(--d0bg)} .d1{color:var(--d1);background:var(--d1bg)}
   .d2{color:var(--d2);background:var(--d2bg)} .d3{color:var(--d3);background:var(--d3bg)}
@@ -189,9 +190,14 @@
           if(rows.length) complexes.push({...c, rows});
         }
         if(!complexes.length) return '';
+        // 역 도보거리 짧은 순 (정보 없으면 뒤로)
+        const walkOf = (cid)=> INFO[cid]?.info?.station?.walkDist ?? Infinity;
+        complexes.sort((a,b)=> walkOf(a.complexId)-walkOf(b.complexId));
         let body='';
         for(const c of complexes){
-          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>`;
+          const st = INFO[c.complexId]?.info?.station;
+          const sub = st ? `<div class="cxsub">${esc(st.name)} 도보 ${st.walkMin}분 · ${st.walkDist}m</div>` : `<div class="cxsub">역 정보 없음</div>`;
+          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>${sub}`;
           if(collapsed.has(c.complexId)){
             body += `<tr><td class="cxcell">${cxName}</td><td class="l muted" colspan="8">${c.rows.length}개 평형 · 접힘</td></tr>`;
           } else {
