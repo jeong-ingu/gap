@@ -206,6 +206,7 @@
     // 동네 그룹: 단지별로 평형(25/30/34) 묶음(셀병합) + 접기/펼치기
     const collapsed = new Set();
     const AREAORDER = [59,75,84];
+    const HOJAE = { '신검단중앙':'5호선 연장, GTX-D', '아라역':'5호선 연장', '안양 만안구':'월판선', '금정':'GTX-C' };
     function renderGroups(){
       $('#groups').innerHTML = groupData.map(g=>{
         // 단지별 그룹핑 (등장 순), 평형은 25→30→34
@@ -234,7 +235,8 @@
             });
           }
         }
-        return `<h2>📍 ${esc(g.gname)} <span class="pill">${complexes.length}단지</span></h2>
+        const hojae = HOJAE[g.gname] ? `<div class="sub" style="margin:-4px 0 10px"><span style="color:var(--gold)">🚀 호재</span> : ${esc(HOJAE[g.gname])}</div>` : '';
+        return `<h2>📍 ${esc(g.gname)} <span class="pill">${complexes.length}단지</span></h2>${hojae}
           <div class="card tablewrap"><table>${headGrp}<tbody>${body}</tbody></table></div>`;
       }).join('');
     }
