@@ -264,7 +264,7 @@
     function openInfo(cid){
       const rec = INFO[cid]; if(!rec) return;
       const i = rec.info || {};
-      const st = i.station;
+      const st = i.station, sc = i.school;
       $('#mt').innerHTML = rec.url
         ? `<a href="${esc(rec.url)}" target="_blank" rel="noopener">${esc(rec.name)} ↗</a>`
         : esc(rec.name);
@@ -272,6 +272,7 @@
         ['준공', i.approvalYear ? `${i.approvalYear}년${i.elapsedYear!=null?` (${i.elapsedYear}년차)`:''}` : '정보 없음'],
         ['세대수', i.households!=null ? `${i.households.toLocaleString()}세대${i.buildings?` · ${i.buildings}개동`:''}` : '정보 없음'],
         ['최근접역', st ? `${st.name}${st.line?`(${st.line})`:''} · 도보 ${st.walkMin}분 (${st.walkDist}m)` : '정보 없음'],
+        ['배정 초등학교', sc ? `${sc.name} · ${sc.distance}m${sc.walkMin?` (도보 ${sc.walkMin}분)`:''}` : '정보 없음'],
       ];
       $('#mb').innerHTML = rows.map(([k,v])=>`<div class="minfo"><span class="k">${k}</span><span class="v">${esc(v)}</span></div>`).join('')
         + (i.address ? `<div class="maddr">${esc(i.address.split(' ').filter((w,idx,a)=>a.indexOf(w)===idx).join(' '))}</div>` : '');
