@@ -79,7 +79,7 @@
     <button class="fbtn" data-area="84">84㎡</button>
   </div>
 
-  <h2>🎯 갭 근접 TOP <span class="pill">매물갭과 실거래갭 차이가 작은 순</span></h2>
+  <h2>🎯 갭 근접 TOP <span class="pill">음수(매물갭&lt;실거래갭) 먼저 · 상위 10건</span></h2>
   <div class="card tablewrap" style="margin-bottom:8px"><table id="topN"></table></div>
 
   <div id="groups"></div>
@@ -153,14 +153,18 @@
       return `<span class="diff ${cls}">${arw}${label}</span>`;
     };
     const arrow = (k, sk, sd)=> k===sk ? (sd==='asc'?' ▲':' ▼') : '';
-    const head = (withGroup, sk, sd)=>`<thead><tr>
-      ${withGroup?'<th class="l">그룹</th>':''}<th class="l">단지</th><th class="l">평형</th>
-      <th>매매 매물</th><th>전세 매물</th>
-      <th class="sortable" data-k="listingGap">매물갭${arrow('listingGap',sk,sd)}</th>
-      <th>실거래 매매</th><th>실거래 전세</th>
-      <th class="sortable" data-k="realGap">실거래갭${arrow('realGap',sk,sd)}</th>
-      <th class="sortable" data-k="diff">차이${arrow('diff',sk,sd)}</th>
-    </tr></thead>`;
+    const head = (withGroup, sk, sd, sortable=true)=>{
+      const th = (k,label)=> sortable ? `<th class="sortable" data-k="${k}">${label}${arrow(k,sk,sd)}</th>` : `<th>${label}</th>`;
+      return `<thead><tr>
+        ${withGroup?'<th class="l">그룹</th>':''}<th class="l">단지</th><th class="l">평형</th>
+        <th>매매 매물</th><th>전세 매물</th>
+        ${th('listingGap','매물갭')}
+        <th>실거래 매매</th><th>실거래 전세</th>
+        ${th('realGap','실거래갭')}
+        ${th('diff','차이')}
+      </tr></thead>`;
+    };
+    const sdiff = (r)=> (r.listingGap!=null && r.realGap!=null) ? r.listingGap - r.realGap : null;
     const cmp = (a,b,k,dir)=>{ const an=a[k]==null,bn=b[k]==null; if(an&&bn)return 0; if(an)return 1; if(bn)return -1; return dir==='asc'?a[k]-b[k]:b[k]-a[k]; };
 
     let currentArea = 'all';
@@ -179,9 +183,13 @@
       applyFilter(currentArea);
     }
 
-    // TOP
-    const topEl = $('#topN'); topEl._rows = topRows; topEl.dataset.withGroup='1'; topEl.dataset.sortK='diff'; topEl.dataset.sortDir='asc';
-    renderTable(topEl);
+    // TOP: 음수(매물갭<실거래갭) 먼저, 그 안에서 0에 가까운 순 · 상위 10건 (고정, 정렬 헤더 없음)
+    const topSorted = topRows.slice().sort((a,b)=>{
+      const sa=sdiff(a), sb=sdiff(b), na=sa<0?0:1, nb=sb<0?0:1;
+      return na!==nb ? na-nb : Math.abs(sa)-Math.abs(sb);
+    }).slice(0,10);
+    $('#topN').innerHTML = head(true,null,null,false) + '<tbody>' + topSorted.map(r=>
+      `<tr data-area="${r.bucket}" class="${r.diff==null?'nodata':''}">${cells(r,true)}</tr>`).join('') + '</tbody>';
 
     // 동네 그룹별
     $('#groups').innerHTML = groupData.map((g,i)=> g.rows.length ?
