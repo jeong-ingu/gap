@@ -79,6 +79,15 @@
   .minfo:last-child{border-bottom:none}
   .minfo .k{color:var(--muted)} .minfo .v{font-weight:700;text-align:right}
   .maddr{padding-top:10px;font-size:11px;color:var(--muted)}
+  .gaplink{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+  .gaplink:hover{color:var(--gold)}
+  .chartwrap{padding:12px 14px}
+  .chartwrap svg{width:100%;height:auto;display:block}
+  .cline{fill:none;stroke:var(--gold);stroke-width:2}
+  .cdot{fill:var(--gold)}
+  .cgrid{stroke:var(--line);stroke-width:1}
+  .caxis{fill:var(--muted);font-size:10px}
+  .cnote{font-size:11px;color:var(--muted);padding:0 14px 12px}
 </style>
 </head>
 <body>
@@ -158,6 +167,12 @@
     }));
     const topRows = groupData.flatMap(g=>g.rows).filter(r=>r.diff!=null);
 
+    // 실거래 시계열 룩업 (갭 추이 차트용)
+    const ROWTX = {};
+    for(const g of groupData) for(const r of g.rows){
+      ROWTX[`${r.complexId}|${r.bucket}`] = { saleTx:r.saleTx||[], leaseTx:r.leaseTx||[], title:`${r.complexName} · ${r.pyeongLabel}` };
+    }
+
     const noneCell = '<span class="none">없음</span>';
     const priceStack = (cls, med, min, max, cnt)=> med==null ? noneCell
       : `<span class="${cls}">${eok(med)}</span>${cnt?`<div class="rng">${eok(min)}~${eok(max)}·${cnt}건</div>`:''}`;
@@ -183,7 +198,7 @@
         <td class="gap">${eok(r.listingGap)}</td>
         <td>${realCell('sale', r.realSale)}</td>
         <td>${realCell('lease', r.realLease)}</td>
-        <td class="gap">${r.realGap==null?noneCell:eok(r.realGap)}</td>
+        <td class="gap">${r.realGap==null?noneCell:`<span class="gaplink" data-gk="${esc(r.complexId)}|${r.bucket}">${eok(r.realGap)}</span>`}</td>
         <td>${diffCell(r)}</td>`;
     const cells = (r, withGroup)=> (withGroup?`<td class="l"><span class="grp">${esc(r.group)}</span></td>`:'') + complexTd(r) + restCells(r);
     const headTop = `<thead><tr><th class="l">그룹</th><th class="l">단지</th><th class="l">평형</th>
@@ -284,6 +299,46 @@
       backdrop.classList.add('show');
     }
     document.addEventListener('click', e=>{ const cx=e.target.closest('.cxlink'); if(cx) openInfo(cx.dataset.cid); });
+
+    // 실거래 갭 추이 차트 (갭 값 클릭)
+    function gapSeries(saleTx, leaseTx){
+      const dates=[...new Set([...saleTx,...leaseTx].map(x=>x.date))].sort();
+      const pts=[];
+      for(const d of dates){
+        let s=null; for(const x of saleTx){ if(x.date<=d) s=x.price; }
+        let l=null; for(const x of leaseTx){ if(x.date<=d) l=x.price; }
+        if(s!=null && l!=null) pts.push({date:d, gap:s-l});
+      }
+      return pts;
+    }
+    function chartSVG(pts){
+      const W=400,H=210,PL=46,PR=14,PT=16,PB=28;
+      const xs=pts.map(p=>+new Date(p.date)), ys=pts.map(p=>p.gap);
+      const x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys);
+      const spanX=(x1-x0)||1, spanY=(y1-y0)||1;
+      const px=t=>PL+(t-x0)/spanX*(W-PL-PR);
+      const py=v=>PT+(1-(v-y0)/spanY)*(H-PT-PB);
+      const line=pts.map((p,i)=>`${i?'L':'M'}${px(+new Date(p.date)).toFixed(1)},${py(p.gap).toFixed(1)}`).join(' ');
+      const dots=pts.map(p=>`<circle class="cdot" cx="${px(+new Date(p.date)).toFixed(1)}" cy="${py(p.gap).toFixed(1)}" r="2.5"/>`).join('');
+      const yTicks=[y0,(y0+y1)/2,y1].map(v=>`<line class="cgrid" x1="${PL}" y1="${py(v).toFixed(1)}" x2="${W-PR}" y2="${py(v).toFixed(1)}"/><text class="caxis" x="${PL-6}" y="${(py(v)+3).toFixed(1)}" text-anchor="end">${eok(Math.round(v))}</text>`).join('');
+      const fmtM=d=>d.slice(2,7).replace('-','.');
+      const xLabels=`<text class="caxis" x="${PL}" y="${H-8}" text-anchor="start">${fmtM(pts[0].date)}</text><text class="caxis" x="${W-PR}" y="${H-8}" text-anchor="end">${fmtM(pts[pts.length-1].date)}</text>`;
+      return `<svg viewBox="0 0 ${W} ${H}">${yTicks}<path class="cline" d="${line}"/>${dots}${xLabels}</svg>`;
+    }
+    function openGapChart(gk){
+      const rec=ROWTX[gk]; if(!rec) return;
+      const pts=gapSeries(rec.saleTx, rec.leaseTx);
+      $('#mt').textContent = `${rec.title} · 실거래 갭 추이`;
+      if(pts.length<2){
+        $('#mb').innerHTML = `<div class="cnote" style="padding:16px 14px">최근 6개월 매매·전세 실거래가 함께 있는 시점이 부족해 추이를 그릴 수 없습니다. (매매 ${rec.saleTx.length}건 · 전세 ${rec.leaseTx.length}건)</div>`;
+      } else {
+        const last=pts[pts.length-1].gap;
+        $('#mb').innerHTML = `<div class="chartwrap">${chartSVG(pts)}</div>`
+          + `<div class="cnote">최근 실거래 갭 <b style="color:var(--gold)">${eok(last)}</b> · 각 시점 = (직전 매매 실거래 − 직전 전세 실거래)</div>`;
+      }
+      backdrop.classList.add('show');
+    }
+    document.addEventListener('click', e=>{ const gl=e.target.closest('.gaplink'); if(gl) openGapChart(gl.dataset.gk); });
   }
 </script>
 </body>

@@ -176,6 +176,9 @@ function buildRows(cid, raw) {
       leaseMed: medLease, leaseCnt: leaseList.length,
       realSale: recentSale ? { price: recentSale.dealPrice, date: recentSale.tradeDate } : null,
       realLease: recentLease ? { price: recentLease.deposit, date: recentLease.tradeDate } : null,
+      // 실거래 시계열(추이 차트용) — 오름차순
+      saleTx: salesTx.map(t => ({ date: t.tradeDate, price: t.dealPrice })).sort((a, b) => a.date.localeCompare(b.date)),
+      leaseTx: leaseTx.map(t => ({ date: t.tradeDate, price: t.deposit })).sort((a, b) => a.date.localeCompare(b.date)),
       listingGap, realGap, diff,
     });
   }
