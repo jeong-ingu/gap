@@ -159,7 +159,7 @@
             "leaseMin": 420000000,
             "leaseMax": 420000000,
             "leaseMed": 420000000,
-            "leaseCnt": 1,
+            "leaseCnt": 2,
             "realSale": null,
             "realLease": {
               "price": 400000000,
@@ -408,7 +408,7 @@
             "leaseMin": 270000000,
             "leaseMax": 400000000,
             "leaseMed": 280000000,
-            "leaseCnt": 77,
+            "leaseCnt": 76,
             "realSale": {
               "price": 510000000,
               "date": "2026-07-17"
@@ -588,7 +588,7 @@
             "saleMin": 760000000,
             "saleMax": 880000000,
             "saleMed": 820000000,
-            "saleCnt": 199,
+            "saleCnt": 198,
             "leaseMin": 380000000,
             "leaseMax": 450000000,
             "leaseMed": 410000000,
@@ -640,7 +640,7 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 715,
+            "saleCnt": 713,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -718,7 +718,7 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 546,
+            "saleCnt": 562,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
             "leaseMed": 440000000,
@@ -796,7 +796,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 423,
+            "saleCnt": 429,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -928,7 +928,7 @@
             "saleMin": 1070000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 277,
+            "saleCnt": 276,
             "leaseMin": 600000000,
             "leaseMax": 650000000,
             "leaseMed": 620000000,
@@ -999,15 +999,15 @@
             "exclusive": 74.9,
             "saleMin": 1250000000,
             "saleMax": 1300000000,
-            "saleMed": 1285000000,
-            "saleCnt": 10,
+            "saleMed": 1300000000,
+            "saleCnt": 9,
             "leaseMin": 750000000,
             "leaseMax": 770000000,
             "leaseMed": 750000000,
             "leaseCnt": 7,
             "realSale": null,
             "realLease": null,
-            "listingGap": 535000000,
+            "listingGap": 550000000,
             "realGap": null,
             "diff": null
           },
@@ -1144,8 +1144,8 @@
         "info": {
           "school": {
             "name": "관모초등학교",
-            "distance": 0,
-            "walkMin": 0
+            "distance": 1116,
+            "walkMin": 20
           },
           "approvalDate": "20220325",
           "approvalYear": "2022",
@@ -1201,7 +1201,7 @@
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 68,
+            "leaseCnt": 69,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -1296,7 +1296,7 @@
       }
     ]
   },
-  "updatedAt": "2026-07-22T10:03:41.028Z",
+  "updatedAt": "2026-07-22T14:28:29.117Z",
   "dateRange": {
     "startDate": "2026-04-22",
     "endDate": "2026-07-22"
