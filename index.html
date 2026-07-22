@@ -127,7 +127,9 @@
 
   if(!G){ document.body.innerHTML='<div class="wrap"><h1>데이터 없음</h1><p class="sub">먼저 <code>node gap-scrape.mjs</code> 실행</p></div>'; }
   else {
-    $('#sub').innerHTML = `갭투자를 위한 시세 비교 대시보드입니다. 최근 3개월 실거래의 갭 가격과 현재 등록된 거래 가능 매물의 갭 가격을 비교합니다. 성공적인 갭 투자 되세요. 🍀`;
+    const collDate = new Date(G.updatedAt).toLocaleString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
+    $('#sub').innerHTML = `갭투자를 위한 시세 비교 대시보드입니다. 최근 3개월 실거래의 갭 가격과 현재 등록된 거래 가능 매물의 갭 가격을 비교합니다. 성공적인 갭 투자 되세요. 🍀`
+      + `<div style="margin-top:7px;font-size:12px">📅 최종 수집일 <b>${collDate}</b> · 실거래 기준 <b>${G.dateRange.startDate} ~ ${G.dateRange.endDate}</b><br>🏠 <b>25평·30평·34평</b>(전용 59·75·84㎡) 매물만 수집합니다.</div>`;
 
     // 단지 정보 룩업 (모달용)
     const INFO = {};
