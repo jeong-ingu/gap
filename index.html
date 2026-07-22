@@ -47,6 +47,7 @@
   .bdgs{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px}
   .bdg{font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;line-height:1.5;white-space:nowrap;border:1px solid transparent}
   .b-tt{color:#7fb3ff;background:rgba(90,140,255,.15);border-color:rgba(90,140,255,.32)}    /* 초역세 파랑 */
+  .b-tt2{color:#9fc0d8;background:rgba(120,170,205,.12);border-color:rgba(120,170,205,.28)} /* 역세권 옅은 파랑 */
   .b-big{color:#79d68a;background:rgba(70,190,110,.15);border-color:rgba(70,190,110,.32)}   /* 대단지 초록 */
   .b-sch{color:#5fd6c4;background:rgba(60,200,180,.15);border-color:rgba(60,200,180,.32)}   /* 초품아 청록 */
   .b-new{color:#f0c15a;background:rgba(230,180,60,.15);border-color:rgba(230,180,60,.34)}   /* 신축 골드 */
@@ -108,7 +109,7 @@
     <span><span class="dot" style="background:#89b4ff"></span>음수 ▼ (매물갭 &lt; 실거래갭)</span>
     <span>· TOP=차이 큰음수→큰양수 순 · 동네별=단지로 묶음(캐럿으로 접기)</span>
     <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 3개월)</span>
-    <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤300m &nbsp;<span class="bdg b-new">신축</span>준공≤5년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·위브</span>
+    <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-tt2">역세권</span>300~600m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤500m &nbsp;<span class="bdg b-new">신축</span>준공≤7년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·위브</span>
   </div>
 </div>
 
@@ -137,7 +138,10 @@
     const badges = (cid, name)=>{
       const i = INFO[cid]?.info || {};
       const b = [];
-      if(i.station && i.station.walkDist!=null && i.station.walkDist<=300) b.push(['초역세','b-tt']);
+      if(i.station && i.station.walkDist!=null){
+        if(i.station.walkDist<=300) b.push(['초역세','b-tt']);
+        else if(i.station.walkDist<=600) b.push(['역세권','b-tt2']);
+      }
       if(i.households!=null && i.households>=1000) b.push(['대단지','b-big']);
       if(i.school && i.school.distance!=null && i.school.distance<=500) b.push(['초품아','b-sch']);
       if(i.elapsedYear!=null && i.elapsedYear<=7) b.push(['신축','b-new']);
