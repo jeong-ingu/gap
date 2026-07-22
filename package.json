@@ -1,0 +1,12 @@
+{
+  "name": "gap",
+  "version": "1.0.0",
+  "description": "단지 매물갭 vs 실거래갭 비교 대시보드",
+  "type": "module",
+  "scripts": {
+    "scrape": "node gap-scrape.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.0.0"
+  }
+}
