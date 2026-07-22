@@ -176,7 +176,7 @@
     for(const g of groupData) for(const r of g.rows){
       const key = `${r.complexId}|${r.bucket}`;
       ROWTX[key] = { saleTx:r.saleTx||[], leaseTx:r.leaseTx||[], title:`${r.complexName} · ${r.pyeongLabel}` };
-      COST[key] = { costs:r.costs||null, title:`${r.complexName} · ${r.pyeongLabel}`, salePrice:r.saleMin };
+      COST[key] = { costs:r.costs||null, title:`${r.complexName} · ${r.pyeongLabel}`, salePrice:r.saleMin, gap:r.listingGap };
     }
 
     const noneCell = '<span class="none">없음</span>';
@@ -355,22 +355,22 @@
     const manwon = (n)=> n==null ? '-' : (n>=1e8 ? eok(n) : Math.round(n/1e4).toLocaleString()+'만');
     function openCost(gk){
       const rec=COST[gk]; if(!rec) return;
-      const c=rec.costs, sp=rec.salePrice;
+      const c=rec.costs, sp=rec.salePrice, gap=rec.gap;
       if(!c || (c.acquisitionTax==null && c.agentFee==null && c.propertyTax==null && c.maintenanceFee==null)){
         $('#mt').textContent = `${rec.title} · 예상 비용`;
         $('#mb').innerHTML = `<div class="cnote" style="padding:16px 14px">비용 정보를 불러오지 못했습니다.</div>`;
       } else {
-        const total = (sp||0) + (c.acquisitionTax||0) + (c.agentFee||0);
-        $('#mt').innerHTML = `${esc(rec.title)}<div style="font-size:13px;color:var(--gold);margin-top:3px">총 예상비용 ${eok(total)} <span style="color:var(--muted);font-weight:400">(매매가+취득세+중개수수료)</span></div>`;
+        const total = (gap||0) + (c.acquisitionTax||0) + (c.agentFee||0);
+        $('#mt').innerHTML = `${esc(rec.title)}<div style="font-size:13px;color:var(--gold);margin-top:3px">총 예상 실투자금 ${eok(total)} <span style="color:var(--muted);font-weight:400">(갭+취득세+중개수수료)</span></div>`;
         const rows=[
-          ['매매가', manwon(sp)],
+          ['매물 갭', manwon(gap)],
           ['취득세(총)', manwon(c.acquisitionTax)],
           ['중개수수료', manwon(c.agentFee)],
           ['보유세(재산세·연)', manwon(c.propertyTax)],
           ['관리비(월평균)', manwon(c.maintenanceFee)],
         ];
         $('#mb').innerHTML = rows.map(([k,v])=>`<div class="costrow"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')
-          + `<div class="cnote">대표 매매 최저 호가 <b>${eok(sp)}</b> 기준 · 1주택 표준 가정 추정치(다주택·생애최초 등은 상이)</div>`;
+          + `<div class="cnote">매물 갭 <b>${eok(gap)}</b> + 취득세 + 중개수수료 · 세금·수수료는 매매 최저 호가 ${eok(sp)} 기준 1주택 표준 추정</div>`;
       }
       backdrop.classList.add('show');
     }
