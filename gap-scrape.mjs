@@ -82,15 +82,11 @@ async function collectComplex(page, cid, dr) {
       if (t.walkingDistance != null && (!station || t.walkingDistance < station.walkDist))
         station = { name: s.stationName, line: t.name, walkMin: t.walkingDuration, walkDist: t.walkingDistance };
 
-    // 배정 초등학교 (최단거리) — /article/school 은 buildingNumber 필요
+    // 배정 초등학교 — 네이버 단지정보와 동일한 값 (/complex/school?itemType=complex)
     let school = null;
-    const bl = await gj(`${B}/complex/buildingList?complexNumber=${cid}`);
-    const bnum = bl?.result?.[0]?.number;
-    if (bnum != null) {
-      const sc = await gj(`${B}/article/school?itemType=complex&complexNumber=${cid}&buildingNumber=${bnum}`);
-      const elem = (Array.isArray(sc?.result) ? sc.result : []).filter(s => (s.name || '').includes('초등') && s.distance != null);
-      if (elem.length) { const best = elem.reduce((a, b) => a.distance <= b.distance ? a : b); school = { name: best.name, distance: best.distance, walkMin: best.walkingMinute }; }
-    }
+    const sc = await gj(`${B}/complex/school?complexNumber=${cid}&itemType=complex`);
+    const elem = (Array.isArray(sc?.result) ? sc.result : []).filter(s => (s.name || '').includes('초등') && s.distance != null);
+    if (elem.length) { const best = elem.reduce((a, b) => a.distance <= b.distance ? a : b); school = { name: best.name, distance: best.distance, walkMin: best.walkingMinute }; }
 
     const info = {
       school,
