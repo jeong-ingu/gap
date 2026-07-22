@@ -5,6 +5,7 @@
         "complexId": "146059",
         "complexName": "신검단중앙역풍경채어바니티",
         "info": {
+          "school": null,
           "approvalDate": "20241128",
           "approvalYear": "2024",
           "elapsedYear": 2,
@@ -49,6 +50,7 @@
         "complexId": "148541",
         "complexName": "힐스테이트신검단센트럴",
         "info": {
+          "school": null,
           "approvalDate": "20250123",
           "approvalYear": "2025",
           "elapsedYear": 2,
@@ -73,7 +75,7 @@
             "saleMin": 780000000,
             "saleMax": 830000000,
             "saleMed": 800000000,
-            "saleCnt": 41,
+            "saleCnt": 43,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -93,7 +95,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 900000000,
-            "saleCnt": 152,
+            "saleCnt": 153,
             "leaseMin": 400000000,
             "leaseMax": 450000000,
             "leaseMed": 430000000,
@@ -116,6 +118,7 @@
         "complexId": "151666",
         "complexName": "신검단중앙역우미린클래스원",
         "info": {
+          "school": null,
           "approvalDate": "20250829",
           "approvalYear": "2025",
           "elapsedYear": 1,
@@ -160,6 +163,11 @@
         "complexId": "148117",
         "complexName": "신검단중앙역풍경채어바니티2차",
         "info": {
+          "school": {
+            "name": "인천신검단초등학교",
+            "distance": 478,
+            "walkMin": 9
+          },
           "approvalDate": "20250328",
           "approvalYear": "2025",
           "elapsedYear": 2,
@@ -221,6 +229,7 @@
         "complexId": "156458",
         "complexName": "신검단중앙역금강펜테리움센트럴파크",
         "info": {
+          "school": null,
           "approvalDate": "20251031",
           "approvalYear": "2025",
           "elapsedYear": 1,
@@ -289,6 +298,7 @@
         "complexId": "153397",
         "complexName": "신검단중앙역센트레빌",
         "info": {
+          "school": null,
           "approvalDate": "202610",
           "approvalYear": "2026",
           "elapsedYear": 0,
@@ -316,11 +326,11 @@
             "saleCnt": 9,
             "leaseMin": 280000000,
             "leaseMax": 350000000,
-            "leaseMed": 315000000,
-            "leaseCnt": 16,
+            "leaseMed": 305000000,
+            "leaseCnt": 14,
             "realSale": null,
             "realLease": null,
-            "listingGap": 244340000,
+            "listingGap": 254340000,
             "realGap": null,
             "diff": null
           },
@@ -337,7 +347,7 @@
             "leaseMin": 300000000,
             "leaseMax": 400000000,
             "leaseMed": 330000000,
-            "leaseCnt": 59,
+            "leaseCnt": 57,
             "realSale": null,
             "realLease": null,
             "listingGap": 306010000,
@@ -350,6 +360,7 @@
         "complexId": "167518",
         "complexName": "신검단중앙역디에트르더에듀",
         "info": {
+          "school": null,
           "approvalDate": "20260410",
           "approvalYear": "2026",
           "elapsedYear": 1,
@@ -420,6 +431,11 @@
         "complexId": "124846",
         "complexName": "검단금호어울림센트럴(AB14BL)",
         "info": {
+          "school": {
+            "name": "인천이음초등학교",
+            "distance": 718,
+            "walkMin": 12
+          },
           "approvalDate": "20210604",
           "approvalYear": "2021",
           "elapsedYear": 6,
@@ -444,7 +460,7 @@
             "saleMin": 670000000,
             "saleMax": 780000000,
             "saleMed": 700000000,
-            "saleCnt": 273,
+            "saleCnt": 274,
             "leaseMin": 380000000,
             "leaseMax": 420000000,
             "leaseMed": 400000000,
@@ -470,7 +486,7 @@
             "saleMin": 680000000,
             "saleMax": 900000000,
             "saleMed": 780000000,
-            "saleCnt": 607,
+            "saleCnt": 615,
             "leaseMin": 350000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -493,6 +509,11 @@
         "complexId": "124978",
         "complexName": "우미린더시그니처",
         "info": {
+          "school": {
+            "name": "인천한별초등학교",
+            "distance": 768,
+            "walkMin": 13
+          },
           "approvalDate": "20220124",
           "approvalYear": "2022",
           "elapsedYear": 5,
@@ -566,6 +587,11 @@
         "complexId": "124847",
         "complexName": "호반써밋1차",
         "info": {
+          "school": {
+            "name": "인천한별초등학교",
+            "distance": 378,
+            "walkMin": 7
+          },
           "approvalDate": "20210603",
           "approvalYear": "2021",
           "elapsedYear": 6,
@@ -590,7 +616,7 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 721,
+            "saleCnt": 729,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -613,6 +639,11 @@
         "complexId": "124980",
         "complexName": "검단신도시푸르지오더베뉴",
         "info": {
+          "school": {
+            "name": "인천한별초등학교",
+            "distance": 483,
+            "walkMin": 8
+          },
           "approvalDate": "20210831",
           "approvalYear": "2021",
           "elapsedYear": 5,
@@ -637,7 +668,7 @@
             "saleMin": 620000000,
             "saleMax": 850000000,
             "saleMed": 670000000,
-            "saleCnt": 62,
+            "saleCnt": 63,
             "leaseMin": 370000000,
             "leaseMax": 370000000,
             "leaseMed": 370000000,
@@ -663,7 +694,7 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 559,
+            "saleCnt": 564,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
             "leaseMed": 440000000,
@@ -686,6 +717,11 @@
         "complexId": "128035",
         "complexName": "검단신도시예미지트리플에듀",
         "info": {
+          "school": {
+            "name": "인천이음초등학교",
+            "distance": 447,
+            "walkMin": 7
+          },
           "approvalDate": "20220630",
           "approvalYear": "2022",
           "elapsedYear": 5,
@@ -709,8 +745,8 @@
             "exclusive": 76.5,
             "saleMin": 590000000,
             "saleMax": 670000000,
-            "saleMed": 617500000,
-            "saleCnt": 94,
+            "saleMed": 620000000,
+            "saleCnt": 104,
             "leaseMin": 340000000,
             "leaseMax": 370000000,
             "leaseMed": 350000000,
@@ -723,9 +759,9 @@
               "price": 350000000,
               "date": "2026-07-12"
             },
-            "listingGap": 267500000,
+            "listingGap": 270000000,
             "realGap": 250000000,
-            "diff": 17500000
+            "diff": 20000000
           },
           {
             "complexId": "128035",
@@ -736,7 +772,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 424,
+            "saleCnt": 422,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -759,6 +795,11 @@
         "complexId": "167537",
         "complexName": "검단신도시롯데캐슬넥스티엘",
         "info": {
+          "school": {
+            "name": "인천아람초등학교",
+            "distance": 971,
+            "walkMin": 14
+          },
           "approvalDate": "20260424",
           "approvalYear": "2026",
           "elapsedYear": 1,
@@ -808,6 +849,11 @@
         "complexId": "112054",
         "complexName": "래미안안양메가트리아",
         "info": {
+          "school": {
+            "name": "덕천초등학교",
+            "distance": 737,
+            "walkMin": 12
+          },
           "approvalDate": "20161026",
           "approvalYear": "2016",
           "elapsedYear": 10,
@@ -862,7 +908,7 @@
             "leaseMin": 600000000,
             "leaseMax": 650000000,
             "leaseMed": 620000000,
-            "leaseCnt": 73,
+            "leaseCnt": 72,
             "realSale": {
               "price": 1099000000,
               "date": "2026-07-12"
@@ -881,6 +927,11 @@
         "complexId": "147880",
         "complexName": "안양역푸르지오더샵",
         "info": {
+          "school": {
+            "name": "안양초등학교",
+            "distance": 706,
+            "walkMin": 12
+          },
           "approvalDate": "202410",
           "approvalYear": "2024",
           "elapsedYear": 2,
@@ -962,6 +1013,11 @@
         "complexId": "9223",
         "complexName": "주공뜨란채",
         "info": {
+          "school": {
+            "name": "안일초등학교",
+            "distance": 710,
+            "walkMin": 10
+          },
           "approvalDate": "20041115",
           "approvalYear": "2004",
           "elapsedYear": 22,
@@ -1035,6 +1091,11 @@
         "complexId": "3092",
         "complexName": "삼성래미안",
         "info": {
+          "school": {
+            "name": "안일초등학교",
+            "distance": 484,
+            "walkMin": 7
+          },
           "approvalDate": "20020125",
           "approvalYear": "2002",
           "elapsedYear": 25,
@@ -1057,6 +1118,11 @@
         "complexId": "121277",
         "complexName": "힐스테이트금정역(주상복합)",
         "info": {
+          "school": {
+            "name": "관모초등학교",
+            "distance": 1116,
+            "walkMin": 20
+          },
           "approvalDate": "20220325",
           "approvalYear": "2022",
           "elapsedYear": 5,
@@ -1081,7 +1147,7 @@
             "saleMin": 1050000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 63,
+            "saleCnt": 64,
             "leaseMin": 630000000,
             "leaseMax": 670000000,
             "leaseMed": 650000000,
@@ -1107,11 +1173,11 @@
             "saleMin": 1200000000,
             "saleMax": 1600000000,
             "saleMed": 1300000000,
-            "saleCnt": 133,
+            "saleCnt": 134,
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 67,
+            "leaseCnt": 66,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -1130,6 +1196,11 @@
         "complexId": "101283",
         "complexName": "래미안하이어스",
         "info": {
+          "school": {
+            "name": "산본초등학교",
+            "distance": 546,
+            "walkMin": 9
+          },
           "approvalDate": "20100920",
           "approvalYear": "2010",
           "elapsedYear": 16,
@@ -1180,7 +1251,7 @@
             "saleMin": 1100000000,
             "saleMax": 1200000000,
             "saleMed": 1150000000,
-            "saleCnt": 40,
+            "saleCnt": 39,
             "leaseMin": 680000000,
             "leaseMax": 680000000,
             "leaseMed": 680000000,
@@ -1205,6 +1276,11 @@
         "complexId": "107577",
         "complexName": "사직롯데캐슬더클래식",
         "info": {
+          "school": {
+            "name": "여고초등학교",
+            "distance": 166,
+            "walkMin": 3
+          },
           "approvalDate": "20170116",
           "approvalYear": "2017",
           "elapsedYear": 10,
@@ -1278,6 +1354,11 @@
         "complexId": "107994",
         "complexName": "쌍용더플래티넘사직아시아드",
         "info": {
+          "school": {
+            "name": "여고초등학교",
+            "distance": 381,
+            "walkMin": 6
+          },
           "approvalDate": "20200228",
           "approvalYear": "2020",
           "elapsedYear": 7,
@@ -1325,7 +1406,7 @@
             "saleMin": 1080000000,
             "saleMax": 1300000000,
             "saleMed": 1190000000,
-            "saleCnt": 127,
+            "saleCnt": 124,
             "leaseMin": 650000000,
             "leaseMax": 700000000,
             "leaseMed": 680000000,
@@ -1348,6 +1429,11 @@
         "complexId": "136343",
         "complexName": "레이카운티",
         "info": {
+          "school": {
+            "name": "창신초등학교",
+            "distance": 721,
+            "walkMin": 12
+          },
           "approvalDate": "20231129",
           "approvalYear": "2023",
           "elapsedYear": 3,
@@ -1370,9 +1456,9 @@
             "pyeongLabel": "25평",
             "exclusive": 60,
             "saleMin": 650000000,
-            "saleMax": 900000000,
+            "saleMax": 950000000,
             "saleMed": 780000000,
-            "saleCnt": 1429,
+            "saleCnt": 1442,
             "leaseMin": 350000000,
             "leaseMax": 470000000,
             "leaseMed": 400000000,
@@ -1424,11 +1510,11 @@
             "saleMin": 790000000,
             "saleMax": 1050000000,
             "saleMed": 880000000,
-            "saleCnt": 1400,
+            "saleCnt": 1350,
             "leaseMin": 470000000,
             "leaseMax": 750000000,
             "leaseMed": 550000000,
-            "leaseCnt": 567,
+            "leaseCnt": 548,
             "realSale": {
               "price": 1075000000,
               "date": "2026-07-16"
@@ -1445,7 +1531,7 @@
       }
     ]
   },
-  "updatedAt": "2026-07-22T08:43:51.585Z",
+  "updatedAt": "2026-07-22T09:51:07.432Z",
   "dateRange": {
     "startDate": "2026-04-22",
     "endDate": "2026-07-22"

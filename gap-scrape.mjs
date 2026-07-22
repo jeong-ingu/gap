@@ -81,7 +81,19 @@ async function collectComplex(page, cid, dr) {
     for (const s of (tr?.subwayList || [])) for (const t of (s.typeList || []))
       if (t.walkingDistance != null && (!station || t.walkingDistance < station.walkDist))
         station = { name: s.stationName, line: t.name, walkMin: t.walkingDuration, walkDist: t.walkingDistance };
+
+    // 배정 초등학교 (최단거리) — /article/school 은 buildingNumber 필요
+    let school = null;
+    const bl = await gj(`${B}/complex/buildingList?complexNumber=${cid}`);
+    const bnum = bl?.result?.[0]?.number;
+    if (bnum != null) {
+      const sc = await gj(`${B}/article/school?itemType=complex&complexNumber=${cid}&buildingNumber=${bnum}`);
+      const elem = (Array.isArray(sc?.result) ? sc.result : []).filter(s => (s.name || '').includes('초등') && s.distance != null);
+      if (elem.length) { const best = elem.reduce((a, b) => a.distance <= b.distance ? a : b); school = { name: best.name, distance: best.distance, walkMin: best.walkingMinute }; }
+    }
+
     const info = {
+      school,
       approvalDate: summary?.useApprovalDate || null,
       approvalYear: summary?.useApprovalDate ? summary.useApprovalDate.slice(0, 4) : null,
       elapsedYear: summary?.approvalElapsedYear ?? null,

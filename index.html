@@ -44,6 +44,13 @@
   .caret:hover{color:var(--gold)}
   td.muted{color:var(--muted);font-style:italic}
   .cxsub{font-size:10.5px;color:var(--muted);font-weight:400;margin-top:3px}
+  .bdgs{margin-top:4px;display:flex;flex-wrap:wrap;gap:3px}
+  .bdg{font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:4px;line-height:1.5;white-space:nowrap}
+  .b-tt{color:#89b4ff;background:rgba(120,160,255,.15)}
+  .b-big{color:#7fd08a;background:rgba(90,200,120,.15)}
+  .b-sch{color:#5fd0c0;background:rgba(80,200,180,.15)}
+  .b-new{color:var(--gold);background:rgba(217,178,74,.16)}
+  .b-brand{color:#c99bf0;background:rgba(180,120,240,.16)}
   .diff{font-weight:800;padding:2px 9px;border-radius:999px;display:inline-block;min-width:52px;text-align:center}
   .d0{color:var(--d0);background:var(--d0bg)} .d1{color:var(--d1);background:var(--d1bg)}
   .d2{color:var(--d2);background:var(--d2bg)} .d3{color:var(--d3);background:var(--d3bg)}
@@ -101,6 +108,7 @@
     <span><span class="dot" style="background:#89b4ff"></span>음수 ▼ (매물갭 &lt; 실거래갭)</span>
     <span>· TOP=차이 큰음수→큰양수 순 · 동네별=단지로 묶음(캐럿으로 접기)</span>
     <span>· <b class="sale">매매</b> / <b class="lease">전세</b> · 매물갭=중간값−중간값 · 실거래갭=최근매매−최근전세(갱신제외, 최근 3개월)</span>
+    <span style="width:100%">배지 · <span class="bdg b-tt">초역세</span>도보≤300m &nbsp;<span class="bdg b-big">대단지</span>≥1000세대 &nbsp;<span class="bdg b-sch">초품아</span>배정초교≤300m &nbsp;<span class="bdg b-new">신축</span>준공≤5년 &nbsp;<span class="bdg b-brand">브랜드</span>자이·롯데캐슬·푸르지오·래미안·힐스테이트·e편한세상·아이파크·위브</span>
   </div>
 </div>
 
@@ -123,6 +131,19 @@
     const INFO = {};
     for(const complexes of Object.values(G.groups))
       for(const c of complexes) INFO[c.complexId] = { name:c.complexName, info:c.info||{}, url:c.url };
+
+    // 단지 배지: 초역세(도보≤300m) · 대단지(≥1000세대) · 초품아(초교≤300m) · 신축(≤5년) · 브랜드
+    const BRANDS = ['자이','롯데캐슬','푸르지오','래미안','힐스테이트','편한세상','아이파크','위브'];
+    const badges = (cid, name)=>{
+      const i = INFO[cid]?.info || {};
+      const b = [];
+      if(i.station && i.station.walkDist!=null && i.station.walkDist<=300) b.push(['초역세','b-tt']);
+      if(i.households!=null && i.households>=1000) b.push(['대단지','b-big']);
+      if(i.school && i.school.distance!=null && i.school.distance<=300) b.push(['초품아','b-sch']);
+      if(i.elapsedYear!=null && i.elapsedYear<=5) b.push(['신축','b-new']);
+      if(BRANDS.some(x=> (name||'').includes(x))) b.push(['브랜드','b-brand']);
+      return b.length ? `<div class="bdgs">${b.map(([t,c])=>`<span class="bdg ${c}">${t}</span>`).join('')}</div>` : '';
+    };
 
     // 그룹/전체 행
     const groupData = Object.entries(G.groups).map(([gname,cs])=>({
@@ -147,7 +168,7 @@
     };
     const sdiff = (r)=> (r.listingGap!=null && r.realGap!=null) ? r.listingGap - r.realGap : null;
     // 단지 셀 / 나머지 데이터 셀(평형~차이, 8칸)
-    const complexTd = (r)=> `<td class="cx cxlink" data-cid="${esc(r.complexId)}" title="${esc(r.complexName)} (클릭: 단지정보)">${esc(r.complexName)}</td>`;
+    const complexTd = (r)=> `<td class="cx cxlink" data-cid="${esc(r.complexId)}" title="${esc(r.complexName)} (클릭: 단지정보)">${esc(r.complexName)}${badges(r.complexId,r.complexName)}</td>`;
     const restCells = (r)=> `
         <td class="l"><span class="area">${esc(r.pyeongLabel)}</span> <span class="py">전용${r.exclusive}㎡</span></td>
         <td>${priceStack('sale', r.saleMed, r.saleMin, r.saleMax, r.saleCnt)}</td>
@@ -195,7 +216,7 @@
         complexes.sort((a,b)=> walkOf(a.complexId)-walkOf(b.complexId));
         let body='';
         for(const c of complexes){
-          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>`;
+          const cxName = `<span class="caret" data-toggle="${esc(c.complexId)}">${collapsed.has(c.complexId)?'▸':'▾'}</span><span class="cxlink" data-cid="${esc(c.complexId)}">${esc(c.complexName)}</span>${badges(c.complexId,c.complexName)}`;
           if(collapsed.has(c.complexId)){
             body += `<tr><td class="cxcell">${cxName}</td><td class="l muted" colspan="8">${c.rows.length}개 평형 · 접힘</td></tr>`;
           } else {
