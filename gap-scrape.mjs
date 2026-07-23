@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const GROUPS = {
   '신검단중앙': ['146059','148541','151666','148117','156458','153397','167518'],
   '아라역':     ['124846','124978','124847','124980','128035','167537'],
-  '안양 만안구': ['112054','147880','9223','3092'],
+  '안양 만안구': ['112054','9223','3092'],
   '금정':       ['121277','101283'],
 };
 // 단지 지도 URL (해석된 것). complexId → url
@@ -129,6 +129,11 @@ async function collectComplex(page, cid, dr) {
 // 전용면적 → 타깃 버킷. 59(전용~59), 75(전용74~76, 29·30평), 84(전용84~85, 33·34·35평)
 const AREAKEY = (e) => e == null ? null : (e >= 56 && e < 63 ? 59 : e >= 73 && e < 79 ? 75 : e >= 80 && e < 88 ? 84 : null);
 const AREALABEL = { 59: '25평', 75: '30평', 84: '34평' };
+// 단지별 특수 매핑 (표준 평형 범위에서 벗어난 단지). 삼성래미안: 전용55→25평, 전용79→34평
+const AREA_OVERRIDE = {
+  '3092': (e) => (e >= 53 && e < 58) ? 59 : (e >= 76 && e < 82) ? 84 : null,
+};
+const areaKeyFor = (cid, e) => { const ov = AREA_OVERRIDE[cid]; if (ov) { const k = ov(e); if (k) return k; } return AREAKEY(e); };
 
 function buildRows(cid, raw) {
   // 각 매물을 가장 가까운 평형타입에 1:1 배정 (중복 방지)
@@ -143,7 +148,7 @@ function buildRows(cid, raw) {
   // 평형타입을 전용면적 버킷(59/75/84)으로 묶기 — 그 외 면적은 제외
   const buckets = {};
   for (const pt of raw.pyeongs) {
-    const k = AREAKEY(pt.excl); if (!k) continue;
+    const k = areaKeyFor(cid, pt.excl); if (!k) continue;
     (buckets[k] = buckets[k] || { key: k, pts: [], excls: [] });
     buckets[k].pts.push(pt); buckets[k].excls.push(pt.excl);
   }

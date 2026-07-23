@@ -34,7 +34,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 870000000,
-            "saleCnt": 208,
+            "saleCnt": 205,
             "leaseMin": 400000000,
             "leaseMax": 500000000,
             "leaseMed": 480000000,
@@ -122,7 +122,7 @@
             "saleMin": 780000000,
             "saleMax": 830000000,
             "saleMed": 800000000,
-            "saleCnt": 43,
+            "saleCnt": 44,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -139,7 +139,7 @@
               }
             ],
             "leaseTx": [],
-            "repSaleArticle": "2639501610",
+            "repSaleArticle": "2639656999",
             "repPyeongNum": 1,
             "listingGap": 400000000,
             "realGap": null,
@@ -160,7 +160,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 900000000,
-            "saleCnt": 150,
+            "saleCnt": 153,
             "leaseMin": 400000000,
             "leaseMax": 450000000,
             "leaseMed": 430000000,
@@ -421,8 +421,8 @@
             "exclusive": 84.8,
             "saleMin": 760000000,
             "saleMax": 830000000,
-            "saleMed": 790000000,
-            "saleCnt": 14,
+            "saleMed": 800000000,
+            "saleCnt": 15,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -433,7 +433,7 @@
             "leaseTx": [],
             "repSaleArticle": "2639043909",
             "repPyeongNum": 3,
-            "listingGap": 390000000,
+            "listingGap": 400000000,
             "realGap": null,
             "diff": null,
             "costs": {
@@ -684,10 +684,10 @@
             "bucket": 75,
             "pyeongLabel": "30평",
             "exclusive": 75,
-            "saleMin": 543670000,
+            "saleMin": 528390000,
             "saleMax": 580460000,
-            "saleMed": 559340000,
-            "saleCnt": 9,
+            "saleMed": 558800000,
+            "saleCnt": 10,
             "leaseMin": 280000000,
             "leaseMax": 350000000,
             "leaseMed": 305000000,
@@ -696,13 +696,13 @@
             "realLease": null,
             "saleTx": [],
             "leaseTx": [],
-            "repSaleArticle": "2637280537",
+            "repSaleArticle": "2639647179",
             "repPyeongNum": 1,
-            "listingGap": 254340000,
+            "listingGap": 253800000,
             "realGap": null,
             "diff": null,
             "costs": {
-              "acquisitionTax": 5980370,
+              "acquisitionTax": 5812290,
               "propertyTax": null,
               "agentFee": null,
               "maintenanceFee": null
@@ -717,11 +717,11 @@
             "saleMin": 587740000,
             "saleMax": 663630000,
             "saleMed": 636010000,
-            "saleCnt": 30,
+            "saleCnt": 31,
             "leaseMin": 300000000,
             "leaseMax": 400000000,
             "leaseMed": 330000000,
-            "leaseCnt": 65,
+            "leaseCnt": 67,
             "realSale": null,
             "realLease": null,
             "saleTx": [],
@@ -765,14 +765,14 @@
             "bucket": 59,
             "pyeongLabel": "25평",
             "exclusive": 59.9,
-            "saleMin": 466000000,
+            "saleMin": 467180000,
             "saleMax": 625000000,
             "saleMed": 489950000,
-            "saleCnt": 67,
+            "saleCnt": 66,
             "leaseMin": 270000000,
             "leaseMax": 400000000,
             "leaseMed": 280000000,
-            "leaseCnt": 82,
+            "leaseCnt": 85,
             "realSale": {
               "price": 510000000,
               "date": "2026-07-17"
@@ -961,13 +961,13 @@
                 "price": 300000000
               }
             ],
-            "repSaleArticle": "2638322419",
+            "repSaleArticle": "2639044066",
             "repPyeongNum": 1,
             "listingGap": 209950000,
             "realGap": 210000000,
             "diff": 50000,
             "costs": {
-              "acquisitionTax": 5126000,
+              "acquisitionTax": 5138980,
               "propertyTax": null,
               "agentFee": 1860000,
               "maintenanceFee": null
@@ -1039,7 +1039,7 @@
                 "price": 350000000
               }
             ],
-            "repSaleArticle": "2639079526",
+            "repSaleArticle": "2639170646",
             "repPyeongNum": 4,
             "listingGap": 200990000,
             "realGap": 264680000,
@@ -1088,11 +1088,11 @@
             "saleMin": 670000000,
             "saleMax": 780000000,
             "saleMed": 700000000,
-            "saleCnt": 265,
+            "saleCnt": 275,
             "leaseMin": 380000000,
             "leaseMax": 420000000,
             "leaseMed": 400000000,
-            "leaseCnt": 50,
+            "leaseCnt": 52,
             "realSale": {
               "price": 703000000,
               "date": "2026-07-16"
@@ -1281,7 +1281,7 @@
                 "price": 380000000
               }
             ],
-            "repSaleArticle": "2639538933",
+            "repSaleArticle": "2639580712",
             "repPyeongNum": 1,
             "listingGap": 300000000,
             "realGap": 323000000,
@@ -1302,8 +1302,8 @@
             "saleMin": 680000000,
             "saleMax": 900000000,
             "saleMed": 780000000,
-            "saleCnt": 593,
-            "leaseMin": 350000000,
+            "saleCnt": 613,
+            "leaseMin": 420000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
             "leaseCnt": 26,
@@ -1487,7 +1487,7 @@
                 "price": 300000000
               }
             ],
-            "repSaleArticle": "2639358284",
+            "repSaleArticle": "2639580628",
             "repPyeongNum": 3,
             "listingGap": 360000000,
             "realGap": 475000000,
@@ -1534,7 +1534,7 @@
             "saleMin": 690000000,
             "saleMax": 780000000,
             "saleMed": 720000000,
-            "saleCnt": 216,
+            "saleCnt": 220,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -1800,11 +1800,11 @@
             "saleMin": 760000000,
             "saleMax": 880000000,
             "saleMed": 820000000,
-            "saleCnt": 199,
+            "saleCnt": 198,
             "leaseMin": 380000000,
             "leaseMax": 450000000,
             "leaseMed": 410000000,
-            "leaseCnt": 53,
+            "leaseCnt": 56,
             "realSale": {
               "price": 816000000,
               "date": "2026-07-18"
@@ -2076,11 +2076,11 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 698,
+            "saleCnt": 713,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
-            "leaseMed": 420000000,
-            "leaseCnt": 45,
+            "leaseMed": 380000000,
+            "leaseCnt": 34,
             "realSale": {
               "price": 740000000,
               "date": "2026-07-21"
@@ -2321,11 +2321,11 @@
                 "price": 400000000
               }
             ],
-            "repSaleArticle": "2639509103",
+            "repSaleArticle": "2639687367",
             "repPyeongNum": 3,
-            "listingGap": 330000000,
+            "listingGap": 370000000,
             "realGap": 340000000,
-            "diff": 10000000,
+            "diff": 30000000,
             "costs": {
               "acquisitionTax": 13090000,
               "propertyTax": 479540,
@@ -2368,11 +2368,11 @@
             "saleMin": 620000000,
             "saleMax": 850000000,
             "saleMed": 670000000,
-            "saleCnt": 63,
+            "saleCnt": 64,
             "leaseMin": 370000000,
             "leaseMax": 370000000,
             "leaseMed": 370000000,
-            "leaseCnt": 2,
+            "leaseCnt": 1,
             "realSale": {
               "price": 634000000,
               "date": "2026-07-05"
@@ -2458,11 +2458,11 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 554,
+            "saleCnt": 562,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
-            "leaseMed": 440000000,
-            "leaseCnt": 12,
+            "leaseMed": 450000000,
+            "leaseCnt": 13,
             "realSale": {
               "price": 680000000,
               "date": "2026-07-21"
@@ -2717,9 +2717,9 @@
             ],
             "repSaleArticle": "2638404740",
             "repPyeongNum": 2,
-            "listingGap": 310000000,
+            "listingGap": 300000000,
             "realGap": 265000000,
-            "diff": 45000000,
+            "diff": 35000000,
             "costs": {
               "acquisitionTax": 13090000,
               "propertyTax": 429380,
@@ -2761,8 +2761,8 @@
             "exclusive": 76.5,
             "saleMin": 590000000,
             "saleMax": 670000000,
-            "saleMed": 620000000,
-            "saleCnt": 105,
+            "saleMed": 610000000,
+            "saleCnt": 96,
             "leaseMin": 340000000,
             "leaseMax": 370000000,
             "leaseMed": 350000000,
@@ -2875,14 +2875,14 @@
                 "price": 350000000
               }
             ],
-            "repSaleArticle": "2634886537",
+            "repSaleArticle": "2639665366",
             "repPyeongNum": 2,
-            "listingGap": 270000000,
+            "listingGap": 260000000,
             "realGap": 250000000,
-            "diff": 20000000,
+            "diff": 10000000,
             "costs": {
               "acquisitionTax": 6490000,
-              "propertyTax": 348370,
+              "propertyTax": 384240,
               "agentFee": 2360000,
               "maintenanceFee": 263011
             }
@@ -2896,7 +2896,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 394,
+            "saleCnt": 413,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -3101,7 +3101,7 @@
                 "price": 297000000
               }
             ],
-            "repSaleArticle": "2639380282",
+            "repSaleArticle": "2639677675",
             "repPyeongNum": 3,
             "listingGap": 240000000,
             "realGap": 286000000,
@@ -3306,7 +3306,7 @@
             "saleMin": 900000000,
             "saleMax": 1050000000,
             "saleMed": 970000000,
-            "saleCnt": 128,
+            "saleCnt": 129,
             "leaseMin": 550000000,
             "leaseMax": 550000000,
             "leaseMed": 550000000,
@@ -3720,11 +3720,11 @@
             "saleMin": 1070000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 292,
+            "saleCnt": 280,
             "leaseMin": 600000000,
             "leaseMax": 650000000,
             "leaseMed": 620000000,
-            "leaseCnt": 74,
+            "leaseCnt": 73,
             "realSale": {
               "price": 1099000000,
               "date": "2026-07-12"
@@ -4149,132 +4149,16 @@
                 "price": 630000000
               }
             ],
-            "repSaleArticle": "2639472415",
+            "repSaleArticle": "2639472405",
             "repPyeongNum": 11,
             "listingGap": 530000000,
             "realGap": 469000000,
             "diff": 61000000,
             "costs": {
               "acquisitionTax": 35310000,
-              "propertyTax": 772140,
+              "propertyTax": 645080,
               "agentFee": 5350000,
               "maintenanceFee": 283543
-            }
-          }
-        ]
-      },
-      {
-        "complexId": "147880",
-        "complexName": "안양역푸르지오더샵",
-        "info": {
-          "school": {
-            "name": "안양초등학교",
-            "distance": 829,
-            "walkMin": 11
-          },
-          "approvalDate": "202410",
-          "approvalYear": "2024",
-          "elapsedYear": 2,
-          "households": 2736,
-          "buildings": 21,
-          "address": "경기도 안양시 만안구 경기도 안양시 만안구 안양동 안양천서로 249",
-          "station": {
-            "name": "안양역",
-            "line": "1호선",
-            "walkMin": 9,
-            "walkDist": 561
-          }
-        },
-        "url": "https://fin.land.naver.com/map?center=3zfpWY-2AF0kw&zoom=15.756302826440022&tradeTypes=A1-B1-B2&realEstateTypes=A01&layer=NobwRAlgJmBcYGMD2BbADgGwKYA8D6UWALgIYQZgA0YaJATiSgM5zjLrY4CSM8AjABYA7AA4RABjABfakyz0EACwAK9Ri1jhSAIzhgiDAHZMSCIhCSGqYeuYTYAKg0IOAnmiwawAQT4BaACF-AIAmawMSY1NzS2VXLEsAczcPADkAVxRtLDo9MOoIqLMLQycSF3csPV9pajpidLpDEm1sOAN0rCkAXSA",
-        "rows": [
-          {
-            "complexId": "147880",
-            "complexName": "안양역푸르지오더샵",
-            "bucket": 59,
-            "pyeongLabel": "25평",
-            "exclusive": 59.9,
-            "saleMin": 1100000000,
-            "saleMax": 1300000000,
-            "saleMed": 1200000000,
-            "saleCnt": 40,
-            "leaseMin": 580000000,
-            "leaseMax": 630000000,
-            "leaseMed": 600000000,
-            "leaseCnt": 53,
-            "realSale": null,
-            "realLease": null,
-            "saleTx": [],
-            "leaseTx": [],
-            "repSaleArticle": "2638654654",
-            "repPyeongNum": 2,
-            "listingGap": 600000000,
-            "realGap": null,
-            "diff": null,
-            "costs": {
-              "acquisitionTax": 36300000,
-              "propertyTax": null,
-              "agentFee": 5500000,
-              "maintenanceFee": 147306
-            }
-          },
-          {
-            "complexId": "147880",
-            "complexName": "안양역푸르지오더샵",
-            "bucket": 75,
-            "pyeongLabel": "30평",
-            "exclusive": 74.9,
-            "saleMin": 1250000000,
-            "saleMax": 1300000000,
-            "saleMed": 1300000000,
-            "saleCnt": 9,
-            "leaseMin": 750000000,
-            "leaseMax": 770000000,
-            "leaseMed": 750000000,
-            "leaseCnt": 7,
-            "realSale": null,
-            "realLease": null,
-            "saleTx": [],
-            "leaseTx": [],
-            "repSaleArticle": "2638513421",
-            "repPyeongNum": 10,
-            "listingGap": 550000000,
-            "realGap": null,
-            "diff": null,
-            "costs": {
-              "acquisitionTax": 41250000,
-              "propertyTax": null,
-              "agentFee": 7500000,
-              "maintenanceFee": 184218
-            }
-          },
-          {
-            "complexId": "147880",
-            "complexName": "안양역푸르지오더샵",
-            "bucket": 84,
-            "pyeongLabel": "34평",
-            "exclusive": 84.8,
-            "saleMin": 1270000000,
-            "saleMax": 1600000000,
-            "saleMed": 1525000000,
-            "saleCnt": 36,
-            "leaseMin": 610000000,
-            "leaseMax": 850000000,
-            "leaseMed": 800000000,
-            "leaseCnt": 23,
-            "realSale": null,
-            "realLease": null,
-            "saleTx": [],
-            "leaseTx": [],
-            "repSaleArticle": "2638973562",
-            "repPyeongNum": 7,
-            "listingGap": 725000000,
-            "realGap": null,
-            "diff": null,
-            "costs": {
-              "acquisitionTax": 41910000,
-              "propertyTax": null,
-              "agentFee": 7620000,
-              "maintenanceFee": 208466
             }
           }
         ]
@@ -4316,7 +4200,7 @@
             "leaseMin": 450000000,
             "leaseMax": 450000000,
             "leaseMed": 450000000,
-            "leaseCnt": 1,
+            "leaseCnt": 2,
             "realSale": {
               "price": 900000000,
               "date": "2026-07-11"
@@ -4572,7 +4456,476 @@
           }
         },
         "url": "https://fin.land.naver.com/map?center=3zfjjQ-2AF9rw&zoom=15.756302826440022&tradeTypes=A1-B1-B2&realEstateTypes=A01&layer=NobwRAlgJmBcYGMD2BbADgGwKYA8D6UWALgIYQZgA0YaJATiSgM5zjLrY4CSM8AzAAYAnACYwAX2pMs9BAAsACvUYtY4UgCM4YekQgJsVHXT0GsAFQaFzATzRZVYAIIBGCdTrEArnQB2JDUNYIjovLHEAXSA",
-        "rows": []
+        "rows": [
+          {
+            "complexId": "3092",
+            "complexName": "삼성래미안",
+            "bucket": 59,
+            "pyeongLabel": "25평",
+            "exclusive": 55.2,
+            "saleMin": 820000000,
+            "saleMax": 840000000,
+            "saleMed": 840000000,
+            "saleCnt": 10,
+            "leaseMin": null,
+            "leaseMax": null,
+            "leaseMed": null,
+            "leaseCnt": 0,
+            "realSale": {
+              "price": 830000000,
+              "date": "2026-06-27"
+            },
+            "realLease": {
+              "price": 450000000,
+              "date": "2026-06-20"
+            },
+            "saleTx": [
+              {
+                "date": "2026-01-27",
+                "price": 706000000
+              },
+              {
+                "date": "2026-01-29",
+                "price": 702000000
+              },
+              {
+                "date": "2026-02-02",
+                "price": 690000000
+              },
+              {
+                "date": "2026-02-02",
+                "price": 760000000
+              },
+              {
+                "date": "2026-02-19",
+                "price": 755000000
+              },
+              {
+                "date": "2026-02-21",
+                "price": 720000000
+              },
+              {
+                "date": "2026-02-28",
+                "price": 765000000
+              },
+              {
+                "date": "2026-02-28",
+                "price": 715000000
+              },
+              {
+                "date": "2026-03-02",
+                "price": 687000000
+              },
+              {
+                "date": "2026-03-08",
+                "price": 690000000
+              },
+              {
+                "date": "2026-03-09",
+                "price": 705000000
+              },
+              {
+                "date": "2026-03-18",
+                "price": 775000000
+              },
+              {
+                "date": "2026-03-25",
+                "price": 745000000
+              },
+              {
+                "date": "2026-03-28",
+                "price": 715000000
+              },
+              {
+                "date": "2026-03-30",
+                "price": 678000000
+              },
+              {
+                "date": "2026-04-09",
+                "price": 755000000
+              },
+              {
+                "date": "2026-04-18",
+                "price": 800000000
+              },
+              {
+                "date": "2026-04-21",
+                "price": 777000000
+              },
+              {
+                "date": "2026-05-14",
+                "price": 777000000
+              },
+              {
+                "date": "2026-05-19",
+                "price": 700000000
+              },
+              {
+                "date": "2026-05-19",
+                "price": 754000000
+              },
+              {
+                "date": "2026-06-02",
+                "price": 780000000
+              },
+              {
+                "date": "2026-06-27",
+                "price": 830000000
+              }
+            ],
+            "leaseTx": [
+              {
+                "date": "2026-02-14",
+                "price": 425000000
+              },
+              {
+                "date": "2026-02-14",
+                "price": 420000000
+              },
+              {
+                "date": "2026-03-04",
+                "price": 440000000
+              },
+              {
+                "date": "2026-03-04",
+                "price": 440000000
+              },
+              {
+                "date": "2026-03-16",
+                "price": 420000000
+              },
+              {
+                "date": "2026-03-25",
+                "price": 440000000
+              },
+              {
+                "date": "2026-04-15",
+                "price": 435000000
+              },
+              {
+                "date": "2026-05-14",
+                "price": 450000000
+              },
+              {
+                "date": "2026-05-14",
+                "price": 450000000
+              },
+              {
+                "date": "2026-06-20",
+                "price": 450000000
+              }
+            ],
+            "repSaleArticle": "2634357565",
+            "repPyeongNum": 2,
+            "listingGap": null,
+            "realGap": 380000000,
+            "diff": null,
+            "costs": {
+              "acquisitionTax": 21894000,
+              "propertyTax": 442760,
+              "agentFee": 3280000,
+              "maintenanceFee": 112367
+            }
+          },
+          {
+            "complexId": "3092",
+            "complexName": "삼성래미안",
+            "bucket": 84,
+            "pyeongLabel": "34평",
+            "exclusive": 79.3,
+            "saleMin": 940000000,
+            "saleMax": 1000000000,
+            "saleMed": 950000000,
+            "saleCnt": 30,
+            "leaseMin": 520000000,
+            "leaseMax": 580000000,
+            "leaseMed": 550000000,
+            "leaseCnt": 4,
+            "realSale": {
+              "price": 880000000,
+              "date": "2026-06-26"
+            },
+            "realLease": {
+              "price": 550000000,
+              "date": "2026-06-30"
+            },
+            "saleTx": [
+              {
+                "date": "2026-01-24",
+                "price": 790000000
+              },
+              {
+                "date": "2026-01-31",
+                "price": 830000000
+              },
+              {
+                "date": "2026-01-31",
+                "price": 790000000
+              },
+              {
+                "date": "2026-02-02",
+                "price": 829000000
+              },
+              {
+                "date": "2026-02-03",
+                "price": 765000000
+              },
+              {
+                "date": "2026-02-03",
+                "price": 779000000
+              },
+              {
+                "date": "2026-02-04",
+                "price": 820000000
+              },
+              {
+                "date": "2026-02-05",
+                "price": 845000000
+              },
+              {
+                "date": "2026-02-06",
+                "price": 800000000
+              },
+              {
+                "date": "2026-02-11",
+                "price": 778000000
+              },
+              {
+                "date": "2026-02-11",
+                "price": 778000000
+              },
+              {
+                "date": "2026-02-14",
+                "price": 810000000
+              },
+              {
+                "date": "2026-02-19",
+                "price": 825000000
+              },
+              {
+                "date": "2026-02-20",
+                "price": 800000000
+              },
+              {
+                "date": "2026-03-01",
+                "price": 832000000
+              },
+              {
+                "date": "2026-03-09",
+                "price": 730000000
+              },
+              {
+                "date": "2026-03-10",
+                "price": 820000000
+              },
+              {
+                "date": "2026-03-12",
+                "price": 780000000
+              },
+              {
+                "date": "2026-03-13",
+                "price": 800000000
+              },
+              {
+                "date": "2026-03-14",
+                "price": 867000000
+              },
+              {
+                "date": "2026-03-17",
+                "price": 810000000
+              },
+              {
+                "date": "2026-03-17",
+                "price": 810000000
+              },
+              {
+                "date": "2026-03-20",
+                "price": 820000000
+              },
+              {
+                "date": "2026-03-21",
+                "price": 870000000
+              },
+              {
+                "date": "2026-03-21",
+                "price": 820000000
+              },
+              {
+                "date": "2026-03-23",
+                "price": 848000000
+              },
+              {
+                "date": "2026-03-24",
+                "price": 770000000
+              },
+              {
+                "date": "2026-04-01",
+                "price": 830000000
+              },
+              {
+                "date": "2026-04-01",
+                "price": 840000000
+              },
+              {
+                "date": "2026-04-01",
+                "price": 830000000
+              },
+              {
+                "date": "2026-04-03",
+                "price": 840000000
+              },
+              {
+                "date": "2026-04-11",
+                "price": 857000000
+              },
+              {
+                "date": "2026-04-14",
+                "price": 850000000
+              },
+              {
+                "date": "2026-04-22",
+                "price": 877000000
+              },
+              {
+                "date": "2026-04-24",
+                "price": 920000000
+              },
+              {
+                "date": "2026-05-09",
+                "price": 850000000
+              },
+              {
+                "date": "2026-05-13",
+                "price": 900000000
+              },
+              {
+                "date": "2026-05-20",
+                "price": 860000000
+              },
+              {
+                "date": "2026-05-25",
+                "price": 880000000
+              },
+              {
+                "date": "2026-06-09",
+                "price": 878000000
+              },
+              {
+                "date": "2026-06-12",
+                "price": 937000000
+              },
+              {
+                "date": "2026-06-18",
+                "price": 900000000
+              },
+              {
+                "date": "2026-06-20",
+                "price": 860000000
+              },
+              {
+                "date": "2026-06-23",
+                "price": 860000000
+              },
+              {
+                "date": "2026-06-26",
+                "price": 880000000
+              }
+            ],
+            "leaseTx": [
+              {
+                "date": "2026-01-31",
+                "price": 500000000
+              },
+              {
+                "date": "2026-01-31",
+                "price": 437500000
+              },
+              {
+                "date": "2026-02-04",
+                "price": 530000000
+              },
+              {
+                "date": "2026-02-13",
+                "price": 450000000
+              },
+              {
+                "date": "2026-02-24",
+                "price": 520000000
+              },
+              {
+                "date": "2026-02-26",
+                "price": 450000000
+              },
+              {
+                "date": "2026-02-28",
+                "price": 510000000
+              },
+              {
+                "date": "2026-02-28",
+                "price": 367500000
+              },
+              {
+                "date": "2026-02-28",
+                "price": 450000000
+              },
+              {
+                "date": "2026-03-06",
+                "price": 550000000
+              },
+              {
+                "date": "2026-03-14",
+                "price": 520000000
+              },
+              {
+                "date": "2026-03-16",
+                "price": 530000000
+              },
+              {
+                "date": "2026-03-25",
+                "price": 530000000
+              },
+              {
+                "date": "2026-03-25",
+                "price": 530000000
+              },
+              {
+                "date": "2026-05-01",
+                "price": 530000000
+              },
+              {
+                "date": "2026-05-14",
+                "price": 520000000
+              },
+              {
+                "date": "2026-06-03",
+                "price": 483000000
+              },
+              {
+                "date": "2026-06-05",
+                "price": 520000000
+              },
+              {
+                "date": "2026-06-16",
+                "price": 550000000
+              },
+              {
+                "date": "2026-06-30",
+                "price": 550000000
+              }
+            ],
+            "repSaleArticle": "2636879381",
+            "repPyeongNum": 4,
+            "listingGap": 400000000,
+            "realGap": 330000000,
+            "diff": 70000000,
+            "costs": {
+              "acquisitionTax": 31020000,
+              "propertyTax": 461160,
+              "agentFee": 4700000,
+              "maintenanceFee": 161557
+            }
+          }
+        ]
       }
     ],
     "금정": [
@@ -4609,7 +4962,7 @@
             "saleMin": 1050000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 64,
+            "saleCnt": 68,
             "leaseMin": 630000000,
             "leaseMax": 670000000,
             "leaseMed": 650000000,
@@ -4686,7 +5039,7 @@
                 "price": 640000000
               }
             ],
-            "repSaleArticle": "2639381144",
+            "repSaleArticle": "2639582893",
             "repPyeongNum": 1,
             "listingGap": 500000000,
             "realGap": 515000000,
@@ -4707,11 +5060,11 @@
             "saleMin": 1200000000,
             "saleMax": 1600000000,
             "saleMed": 1300000000,
-            "saleCnt": 133,
+            "saleCnt": 134,
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 65,
+            "leaseCnt": 66,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -4926,8 +5279,8 @@
             "exclusive": 59.9,
             "saleMin": 900000000,
             "saleMax": 1050000000,
-            "saleMed": 950000000,
-            "saleCnt": 26,
+            "saleMed": 930000000,
+            "saleCnt": 21,
             "leaseMin": 600000000,
             "leaseMax": 640000000,
             "leaseMed": 620000000,
@@ -5210,9 +5563,9 @@
             ],
             "repSaleArticle": "2639576560",
             "repPyeongNum": 1,
-            "listingGap": 330000000,
+            "listingGap": 310000000,
             "realGap": 380000000,
-            "diff": 50000000,
+            "diff": 70000000,
             "costs": {
               "acquisitionTax": 28800000,
               "propertyTax": 566480,
@@ -5229,7 +5582,7 @@
             "saleMin": 1100000000,
             "saleMax": 1200000000,
             "saleMed": 1150000000,
-            "saleCnt": 39,
+            "saleCnt": 40,
             "leaseMin": 680000000,
             "leaseMax": 680000000,
             "leaseMed": 680000000,
@@ -5566,7 +5919,7 @@
       }
     ]
   },
-  "updatedAt": "2026-07-23T01:53:04.429Z",
+  "updatedAt": "2026-07-23T10:48:05.249Z",
   "dateRange": {
     "startDate": "2026-01-23",
     "endDate": "2026-07-23"
