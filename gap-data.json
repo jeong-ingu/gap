@@ -34,7 +34,7 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 870000000,
-            "saleCnt": 205,
+            "saleCnt": 202,
             "leaseMin": 400000000,
             "leaseMax": 500000000,
             "leaseMed": 480000000,
@@ -139,7 +139,7 @@
               }
             ],
             "leaseTx": [],
-            "repSaleArticle": "2639656999",
+            "repSaleArticle": "2639750729",
             "repPyeongNum": 1,
             "listingGap": 400000000,
             "realGap": null,
@@ -160,11 +160,11 @@
             "saleMin": 840000000,
             "saleMax": 1000000000,
             "saleMed": 900000000,
-            "saleCnt": 153,
+            "saleCnt": 152,
             "leaseMin": 400000000,
             "leaseMax": 450000000,
             "leaseMed": 430000000,
-            "leaseCnt": 39,
+            "leaseCnt": 38,
             "realSale": {
               "price": 885000000,
               "date": "2026-07-15"
@@ -174,10 +174,6 @@
               "date": "2026-07-03"
             },
             "saleTx": [
-              {
-                "date": "2026-01-23",
-                "price": 500000000
-              },
               {
                 "date": "2026-05-17",
                 "price": 830000000
@@ -426,7 +422,7 @@
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
-            "leaseCnt": 5,
+            "leaseCnt": 4,
             "realSale": null,
             "realLease": null,
             "saleTx": [],
@@ -717,11 +713,11 @@
             "saleMin": 587740000,
             "saleMax": 663630000,
             "saleMed": 636010000,
-            "saleCnt": 31,
+            "saleCnt": 30,
             "leaseMin": 300000000,
             "leaseMax": 400000000,
             "leaseMed": 330000000,
-            "leaseCnt": 67,
+            "leaseCnt": 65,
             "realSale": null,
             "realLease": null,
             "saleTx": [],
@@ -768,11 +764,11 @@
             "saleMin": 467180000,
             "saleMax": 625000000,
             "saleMed": 489950000,
-            "saleCnt": 66,
+            "saleCnt": 59,
             "leaseMin": 270000000,
             "leaseMax": 400000000,
             "leaseMed": 280000000,
-            "leaseCnt": 85,
+            "leaseCnt": 86,
             "realSale": {
               "price": 510000000,
               "date": "2026-07-17"
@@ -981,8 +977,8 @@
             "exclusive": 84.9,
             "saleMin": 576000000,
             "saleMax": 660000000,
-            "saleMed": 620990000,
-            "saleCnt": 22,
+            "saleMed": 625000000,
+            "saleCnt": 21,
             "leaseMin": 370000000,
             "leaseMax": 430000000,
             "leaseMed": 420000000,
@@ -1041,9 +1037,9 @@
             ],
             "repSaleArticle": "2639170646",
             "repPyeongNum": 4,
-            "listingGap": 200990000,
+            "listingGap": 205000000,
             "realGap": 264680000,
-            "diff": 63690000,
+            "diff": 59680000,
             "costs": {
               "acquisitionTax": 6336000,
               "propertyTax": null,
@@ -1088,11 +1084,11 @@
             "saleMin": 670000000,
             "saleMax": 780000000,
             "saleMed": 700000000,
-            "saleCnt": 275,
+            "saleCnt": 272,
             "leaseMin": 380000000,
             "leaseMax": 420000000,
             "leaseMed": 400000000,
-            "leaseCnt": 52,
+            "leaseCnt": 51,
             "realSale": {
               "price": 703000000,
               "date": "2026-07-16"
@@ -1281,7 +1277,7 @@
                 "price": 380000000
               }
             ],
-            "repSaleArticle": "2639580712",
+            "repSaleArticle": "2639731036",
             "repPyeongNum": 1,
             "listingGap": 300000000,
             "realGap": 323000000,
@@ -1302,7 +1298,7 @@
             "saleMin": 680000000,
             "saleMax": 900000000,
             "saleMed": 780000000,
-            "saleCnt": 613,
+            "saleCnt": 622,
             "leaseMin": 420000000,
             "leaseMax": 450000000,
             "leaseMed": 420000000,
@@ -1487,7 +1483,7 @@
                 "price": 300000000
               }
             ],
-            "repSaleArticle": "2639580628",
+            "repSaleArticle": "2639734246",
             "repPyeongNum": 3,
             "listingGap": 360000000,
             "realGap": 475000000,
@@ -1534,7 +1530,7 @@
             "saleMin": 690000000,
             "saleMax": 780000000,
             "saleMed": 720000000,
-            "saleCnt": 220,
+            "saleCnt": 213,
             "leaseMin": 400000000,
             "leaseMax": 400000000,
             "leaseMed": 400000000,
@@ -1687,10 +1683,6 @@
             ],
             "leaseTx": [
               {
-                "date": "2026-01-23",
-                "price": 420000000
-              },
-              {
                 "date": "2026-02-14",
                 "price": 400000000
               },
@@ -1800,7 +1792,7 @@
             "saleMin": 760000000,
             "saleMax": 880000000,
             "saleMed": 820000000,
-            "saleCnt": 198,
+            "saleCnt": 196,
             "leaseMin": 380000000,
             "leaseMax": 450000000,
             "leaseMed": 410000000,
@@ -2076,7 +2068,7 @@
             "saleMin": 700000000,
             "saleMax": 850000000,
             "saleMed": 750000000,
-            "saleCnt": 713,
+            "saleCnt": 715,
             "leaseMin": 290000000,
             "leaseMax": 450000000,
             "leaseMed": 380000000,
@@ -2321,7 +2313,7 @@
                 "price": 400000000
               }
             ],
-            "repSaleArticle": "2639687367",
+            "repSaleArticle": "2639730115",
             "repPyeongNum": 3,
             "listingGap": 370000000,
             "realGap": 340000000,
@@ -2368,7 +2360,7 @@
             "saleMin": 620000000,
             "saleMax": 850000000,
             "saleMed": 670000000,
-            "saleCnt": 64,
+            "saleCnt": 65,
             "leaseMin": 370000000,
             "leaseMax": 370000000,
             "leaseMed": 370000000,
@@ -2458,7 +2450,7 @@
             "saleMin": 700000000,
             "saleMax": 800000000,
             "saleMed": 750000000,
-            "saleCnt": 562,
+            "saleCnt": 553,
             "leaseMin": 380000000,
             "leaseMax": 480000000,
             "leaseMed": 450000000,
@@ -2468,8 +2460,8 @@
               "date": "2026-07-21"
             },
             "realLease": {
-              "price": 415000000,
-              "date": "2026-06-29"
+              "price": 430000000,
+              "date": "2026-07-23"
             },
             "saleTx": [
               {
@@ -2713,13 +2705,17 @@
               {
                 "date": "2026-06-29",
                 "price": 415000000
+              },
+              {
+                "date": "2026-07-23",
+                "price": 430000000
               }
             ],
             "repSaleArticle": "2638404740",
             "repPyeongNum": 2,
             "listingGap": 300000000,
-            "realGap": 265000000,
-            "diff": 35000000,
+            "realGap": 250000000,
+            "diff": 50000000,
             "costs": {
               "acquisitionTax": 13090000,
               "propertyTax": 429380,
@@ -2762,11 +2758,11 @@
             "saleMin": 590000000,
             "saleMax": 670000000,
             "saleMed": 610000000,
-            "saleCnt": 96,
+            "saleCnt": 93,
             "leaseMin": 340000000,
             "leaseMax": 370000000,
             "leaseMed": 350000000,
-            "leaseCnt": 9,
+            "leaseCnt": 10,
             "realSale": {
               "price": 600000000,
               "date": "2026-07-04"
@@ -2875,7 +2871,7 @@
                 "price": 350000000
               }
             ],
-            "repSaleArticle": "2639665366",
+            "repSaleArticle": "2639767095",
             "repPyeongNum": 2,
             "listingGap": 260000000,
             "realGap": 250000000,
@@ -2896,7 +2892,7 @@
             "saleMin": 570000000,
             "saleMax": 750000000,
             "saleMed": 620000000,
-            "saleCnt": 413,
+            "saleCnt": 403,
             "leaseMin": 360000000,
             "leaseMax": 400000000,
             "leaseMed": 380000000,
@@ -3101,7 +3097,7 @@
                 "price": 297000000
               }
             ],
-            "repSaleArticle": "2639677675",
+            "repSaleArticle": "2639782636",
             "repPyeongNum": 3,
             "listingGap": 240000000,
             "realGap": 286000000,
@@ -3152,7 +3148,7 @@
             "leaseMin": 390000000,
             "leaseMax": 410000000,
             "leaseMed": 390000000,
-            "leaseCnt": 7,
+            "leaseCnt": 6,
             "realSale": {
               "price": 614000000,
               "date": "2026-07-01"
@@ -3320,10 +3316,6 @@
               "date": "2026-07-22"
             },
             "saleTx": [
-              {
-                "date": "2026-01-23",
-                "price": 900000000
-              },
               {
                 "date": "2026-01-24",
                 "price": 880000000
@@ -3589,6 +3581,10 @@
                 "price": 950000000
               },
               {
+                "date": "2026-07-16",
+                "price": 972000000
+              },
+              {
                 "date": "2026-07-21",
                 "price": 1018000000
               }
@@ -3699,7 +3695,7 @@
                 "price": 500000000
               }
             ],
-            "repSaleArticle": "2639469454",
+            "repSaleArticle": "2639725933",
             "repPyeongNum": 1,
             "listingGap": 420000000,
             "realGap": 518000000,
@@ -3720,11 +3716,11 @@
             "saleMin": 1070000000,
             "saleMax": 1250000000,
             "saleMed": 1150000000,
-            "saleCnt": 280,
+            "saleCnt": 281,
             "leaseMin": 600000000,
             "leaseMax": 650000000,
             "leaseMed": 620000000,
-            "leaseCnt": 73,
+            "leaseCnt": 75,
             "realSale": {
               "price": 1099000000,
               "date": "2026-07-12"
@@ -3734,10 +3730,6 @@
               "date": "2026-07-21"
             },
             "saleTx": [
-              {
-                "date": "2026-01-23",
-                "price": 1030000000
-              },
               {
                 "date": "2026-01-24",
                 "price": 1000000000
@@ -4149,14 +4141,14 @@
                 "price": 630000000
               }
             ],
-            "repSaleArticle": "2639472405",
+            "repSaleArticle": "2639472415",
             "repPyeongNum": 11,
             "listingGap": 530000000,
             "realGap": 469000000,
             "diff": 61000000,
             "costs": {
               "acquisitionTax": 35310000,
-              "propertyTax": 645080,
+              "propertyTax": 772140,
               "agentFee": 5350000,
               "maintenanceFee": 283543
             }
@@ -4337,10 +4329,6 @@
             },
             "saleTx": [
               {
-                "date": "2026-01-23",
-                "price": 750000000
-              },
-              {
                 "date": "2026-02-23",
                 "price": 670000000
               },
@@ -4472,8 +4460,8 @@
             "leaseMed": null,
             "leaseCnt": 0,
             "realSale": {
-              "price": 830000000,
-              "date": "2026-06-27"
+              "price": 760000000,
+              "date": "2026-07-13"
             },
             "realLease": {
               "price": 450000000,
@@ -4571,6 +4559,10 @@
               {
                 "date": "2026-06-27",
                 "price": 830000000
+              },
+              {
+                "date": "2026-07-13",
+                "price": 760000000
               }
             ],
             "leaseTx": [
@@ -4618,7 +4610,7 @@
             "repSaleArticle": "2634357565",
             "repPyeongNum": 2,
             "listingGap": null,
-            "realGap": 380000000,
+            "realGap": 310000000,
             "diff": null,
             "costs": {
               "acquisitionTax": 21894000,
@@ -4636,7 +4628,7 @@
             "saleMin": 940000000,
             "saleMax": 1000000000,
             "saleMed": 950000000,
-            "saleCnt": 30,
+            "saleCnt": 31,
             "leaseMin": 520000000,
             "leaseMax": 580000000,
             "leaseMed": 550000000,
@@ -5039,7 +5031,7 @@
                 "price": 640000000
               }
             ],
-            "repSaleArticle": "2639582893",
+            "repSaleArticle": "2639661108",
             "repPyeongNum": 1,
             "listingGap": 500000000,
             "realGap": 515000000,
@@ -5060,11 +5052,11 @@
             "saleMin": 1200000000,
             "saleMax": 1600000000,
             "saleMed": 1300000000,
-            "saleCnt": 134,
+            "saleCnt": 131,
             "leaseMin": 600000000,
             "leaseMax": 850000000,
             "leaseMed": 700000000,
-            "leaseCnt": 66,
+            "leaseCnt": 65,
             "realSale": {
               "price": 1190000000,
               "date": "2026-06-15"
@@ -5294,30 +5286,6 @@
               "date": "2026-07-06"
             },
             "saleTx": [
-              {
-                "date": "2026-01-23",
-                "price": 879000000
-              },
-              {
-                "date": "2026-01-23",
-                "price": 850000000
-              },
-              {
-                "date": "2026-01-23",
-                "price": 900000000
-              },
-              {
-                "date": "2026-01-23",
-                "price": 879000000
-              },
-              {
-                "date": "2026-01-23",
-                "price": 900000000
-              },
-              {
-                "date": "2026-01-23",
-                "price": 850000000
-              },
               {
                 "date": "2026-01-24",
                 "price": 830000000
@@ -5919,9 +5887,9 @@
       }
     ]
   },
-  "updatedAt": "2026-07-23T10:48:05.249Z",
+  "updatedAt": "2026-07-24T01:36:39.668Z",
   "dateRange": {
-    "startDate": "2026-01-23",
-    "endDate": "2026-07-23"
+    "startDate": "2026-01-24",
+    "endDate": "2026-07-24"
   }
 }
